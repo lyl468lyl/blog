@@ -7,7 +7,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   title: "学习记录",
   themeConfig: {
     home: "/",
-    navbar: [{ text: "日志记录", link: "/" }],
+    navbar: [{ text: "首页", link: "/" }],
     repo: "caigouzi1/blog",
     contributors: false,
     editLink: false,
