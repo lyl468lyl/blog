@@ -4,12 +4,17 @@
   "description": "An awesome project.",
   "main": "index.js",
   "scripts": {
-    "start":"docsify serve ./docs",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "start": "docsify serve ./docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "docsify-cli": "^4.4.3"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.35"
   }
 }
