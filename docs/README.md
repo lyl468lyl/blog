@@ -35,4 +35,5 @@ lang: zh-CN
 [php 及接口文档](linux/back-end)\
 [debian 常用命令](linux/debian)\
 [php 扩展安装](linux/php-pecl)\
-[Node后台常驻运行](linux/node)
+[Node后台常驻运行](linux/node)\
+[nginx相关](linux/nginx)
