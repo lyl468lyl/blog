@@ -21,7 +21,8 @@
 
 ## 网址收藏
 
-> [网址导航](https://www.bidianer.com/)\
+> [markdown 表情文字对照编码](https://gist.github.com/rxaviers/7360908) \
+> [网址导航](https://www.bidianer.com/) \
 > [fsou 搜索](https://fsou.cc/)
 
 ## 网络资源

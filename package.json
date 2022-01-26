@@ -1,7 +1,8 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "An awesome project.",
+  "description": "personal blog",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
