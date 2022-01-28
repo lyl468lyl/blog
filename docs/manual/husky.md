@@ -14,7 +14,7 @@
    >
    > - ESM module 相关可参考 [node 文档](https://nodejs.org/api/esm.html#introduction)
 
-1. ## package.json 添加 script
+1. package.json 添加 script
 
    ```bash
    npm set-script prepare "husky install"
