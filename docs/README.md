@@ -1,5 +1,5 @@
 ---
-title: 
+title:
 lang: zh-CN
 ---
 
@@ -9,24 +9,25 @@ lang: zh-CN
 [自动部署](manual/deploy)\
 [常用工具积累](manual/accumulate)\
 [关键词](manual/keyword)\
-[WSL开发](manual/wsl)\
-[实用博客](manual/blogs)
+[WSL 开发](manual/wsl)\
+[实用博客](manual/blogs)\
+[husky + lint-staged 规范 git 代码递交](manual/husky)
 
 ## 前端
 
-[CSS常见问题解决](front-end/css)\
+[CSS 常见问题解决](front-end/css)\
 [CSS Modules](front-end/css-modules)\
 [openlayers](front-end/openlayers)\
 [前端内容积累](front-end/accumulate)\
 [常见问题解决方案](front-end/question)\
-[npm相关](front-end/npm)\
+[npm 相关](front-end/npm)\
 [公用样式](front-end/style)\
 [常用代码块](front-end/code)\
-[ReactNative开发](front-end/react-native)\
-[Taro开发](front-end/taro)\
-[electron项目初始化](front-end/electron)\
-[Taro开发](front-end/taro)\
-[antdpro5常用代码](front-end/antd-pro)
+[ReactNative 开发](front-end/react-native)\
+[Taro 开发](front-end/taro)\
+[electron 项目初始化](front-end/electron)\
+[Taro 开发](front-end/taro)\
+[AntdPro V5 常用代码](front-end/antd-pro)
 
 ## linux
 
@@ -35,5 +36,5 @@ lang: zh-CN
 [php 及接口文档](linux/back-end)\
 [debian 常用命令](linux/debian)\
 [php 扩展安装](linux/php-pecl)\
-[Node后台常驻运行](linux/node)\
-[nginx相关](linux/nginx)
+[Node 后台常驻运行](linux/node)\
+[nginx 相关](linux/nginx)
