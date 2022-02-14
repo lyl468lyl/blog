@@ -14,6 +14,13 @@ export default defineUserConfig<DefaultThemeOptions>({
     repo: 'caigouzi1/blog',
     contributors: false,
     editLink: false,
-    lastUpdatedText: '更新时间'
+    lastUpdatedText: '更新时间',
+    configureWebpack: {
+      resolve: {
+        alias: {
+          '@': 'path/to/some/dir'
+        }
+      }
+    }
   }
 })
