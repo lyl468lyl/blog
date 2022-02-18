@@ -19,6 +19,11 @@
 [微信公众平台](https://mp.weixin.qq.com/)  
 [微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)  
 
+### 技术文档
+
+[docker](https://docker.easydoc.net/doc/81170005/cCewZWoN/lTKfePfP)
+[Kubenetes](https://k8s.easydoc.net/docs/dRiQjyTY/28366845/6GiNOzyZ/9EX8Cp45)
+
 ## 网址收藏
 
 > [markdown 表情文字对照编码](https://gist.github.com/rxaviers/7360908)  
