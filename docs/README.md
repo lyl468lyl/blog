@@ -27,7 +27,9 @@ lang: zh-CN
 [Taro 开发](front-end/taro)\
 [electron 项目初始化](front-end/electron)\
 [Taro 开发](front-end/taro)\
-[AntdPro V5 常用代码](front-end/antd-pro)
+[AntdPro V5 常用代码](front-end/antd-pro)  
+[Webpack常用配置](front-end/webpack)
+
 
 ## linux
 
