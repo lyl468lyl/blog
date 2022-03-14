@@ -100,14 +100,22 @@ git branch
 # 列出本地分支及远程分支
 git branch -a
 
-# 删除本地分支
-git branch -d <dev>
 
 # 本地新建一个本地的分支
 git checkout -b dev
 
 # 代码推送到远端dev分支
 git push origin panda
+```
+
+## Git删除分支
+
+```bash
+# 删除本地分支
+git branch -d <dev>
+
+# 删除远程分支
+git push <remote> --delete <branch>
 ```
 
 ## Git 推送（push）

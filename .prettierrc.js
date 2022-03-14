@@ -10,4 +10,3 @@ module.exports = {
     'jsx-bracket-same-line': false,
     endOfLine: 'auto'
   }
-  

@@ -52,3 +52,14 @@ npm list cowsay
 ```bash
   npm view cowsay version
 ```
+
+### 私有镜像npm登陆问题
+
+```bash
+    npm set registry http://nvwa.jiuqi.com.cn/nexus/repository/npm-nvware-group/  
+    npm config set //nvwa.jiuqi.com.cn/nexus/repository/npm-nvware-group/:_authToken=NpmToken.3bb085e0-a9b5-36e1-be9f-311bb5630c2b  
+```
+
+- 获取authToken
+
+>打开用户目录的 .npmrc，Linux在 ~/.npmrc， Windows在 C:/Users/<用户名>/.npmrc中，找到 \<registry-url\> 对应仓库地址

@@ -4,7 +4,7 @@ import type {DefaultThemeOptions} from 'vuepress'
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/blog/',
   lang: 'zh-CN',
-  title: '学习记录',
+  title: '工作学习记录',
   themeConfig: {
     home: '/',
     navbar: [
