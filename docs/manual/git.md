@@ -116,6 +116,8 @@ git branch -d <dev>
 
 # 删除远程分支
 git push <remote> --delete <branch>
+如：
+git push origin --delete dev  
 ```
 
 ## Git 推送（push）
