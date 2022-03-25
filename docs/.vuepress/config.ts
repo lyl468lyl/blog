@@ -5,6 +5,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   base: '/blog/',
   lang: 'zh-CN',
   title: '工作学习记录',
+  theme: 'gungnir',
   themeConfig: {
     home: '/',
     navbar: [
