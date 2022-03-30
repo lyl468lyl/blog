@@ -1,7 +1,9 @@
 ---
-title:
 lang: zh-CN
+article: false
 ---
+
+# 文章列表
 
 ## 开发者手册
 
@@ -29,7 +31,6 @@ lang: zh-CN
 [Taro 开发](front-end/taro)\
 [AntdPro V5 常用代码](front-end/antd-pro)  
 [Webpack常用配置](front-end/webpack)
-
 
 ## linux
 

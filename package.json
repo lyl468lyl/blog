@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache --clean-temp ",
     "docs:build": "vuepress build docs"
   },
   "author": "",
@@ -14,7 +15,6 @@
   "dependencies": {},
   "devDependencies": {
     "vuepress": "^2.0.0-beta.36",
-    "vuepress-theme-gungnir": "^2.0.0-alpha.18",
     "vuepress-theme-hope": "^2.0.0-beta.26"
   }
 }

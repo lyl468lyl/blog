@@ -1,15 +1,17 @@
-## Docker Nginx部署
+# Docker Nginx部署
 
-### 服务器地址
+## 服务器地址
 
 ```bash
 vm@10.2.24.41 
 P@ssw0rd
 ```
 
-###  nginx文件代理
+## nginx文件代理
+
 - docker-compose.yaml添加软连接
-```
+
+```yaml
     version: '3.5'
     services:
       web:
@@ -30,7 +32,8 @@ P@ssw0rd
         external: true
         name: appNet
 ```
-```
+
+```bash
   // 重启docker
   docker-compose restart
   // docker列表
