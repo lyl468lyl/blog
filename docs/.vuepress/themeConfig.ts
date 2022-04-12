@@ -21,7 +21,7 @@ export default defineThemeConfig({
   // navbar
   navbar: navbar,
 
-  // sidebar
+  sidebar: false,
   // sidebar: sidebar,
 
   footer: '默认页脚',
@@ -32,8 +32,7 @@ export default defineThemeConfig({
 
   blog: {
     description: '一个前端开发者',
-    article: '/',
-    intro: '/intro.html',
+    // intro: '/intro.html',
     medias: {
       GitHub: 'https://github.com/caigouzi1'
     }
@@ -47,7 +46,8 @@ export default defineThemeConfig({
 
   plugins: {
     blog: {
-      autoExcerpt: true
+      autoExcerpt: true,
+      article: '/'
     },
     seo: false,
 
