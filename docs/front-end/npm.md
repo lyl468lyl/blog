@@ -1,3 +1,8 @@
+---
+category: 前端
+tag:
+  - npm
+---
 # npm 相关
 
 ## 切换镜像源

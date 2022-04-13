@@ -1,6 +1,11 @@
+---
+category: 前端
+tag:
+  - antd
+---
 # antdpro5常用代码
 
-### 1. 中文配置
+## 1. 中文配置
 
 ```javascript
 export function rootContainer(container: React.ReactNode) {
@@ -14,7 +19,7 @@ export function rootContainer(container: React.ReactNode) {
 }
 ```
 
-### 2.http处理 
+## 2.http处理
 
 ```javascript
 const errorHandler = (error: { response: Response }) => {

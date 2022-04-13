@@ -35,7 +35,8 @@ export default defineThemeConfig({
     // intro: '/intro.html',
     medias: {
       GitHub: 'https://github.com/caigouzi1'
-    }
+    },
+    categoryItem: []
   },
 
   encrypt: {

@@ -1,7 +1,11 @@
+---
+category: 前端
+tag:
+  - ReactNative
+---
 # ReactNative开发
 
-
-* ### 网络文档
+* ## 网络文档
 
 1. [ReactNativeWeb与RN项目整合](https://juejin.im/post/5dc3c36ef265da4d0c175624)
 2. [React Native 根据WebView内容自动设置高度](https://www.jianshu.com/p/29c54ecbba28)
@@ -9,16 +13,15 @@
 4. [Android7.0 和 Charles的抓包](https://blog.csdn.net/u011045726/article/details/76064048)
 5. [react native 常用样式](https://shenbao.github.io/ishehui/html/RN%20%E5%9F%BA%E7%A1%80/React%20Native%20%E6%A0%B7%E5%BC%8F%E8%A1%A8%E6%8C%87%E5%8D%97.html)
 6. [jdk8 下载](https://www.injdk.cn/)
-6. [安卓资源下载](https://www.androiddevtools.cn/index.html/) 
+6. [安卓资源下载](https://www.androiddevtools.cn/index.html/)
 
-
-* ### 第三方组件
+* ## 第三方组件
 
 1. [@voximplant/react-native-foreground-service](https://www.npmjs.com/package/@voximplant/react-native-foreground-service)
 1. [图标长按操作](react-native-shortcutmanager) - 相关关键词Shortcut
 
-
 * ### WebView
+
 ```
 import React, {PureComponent} from 'react';
 import WebView from 'react-native-webview';
@@ -117,12 +120,16 @@ export default class WebWrapper extends PureComponent<WebWrapperProps> {
 }
 ```
 
-* ### 安卓键盘遮挡
+* ## 安卓键盘遮挡
+
     1.修改AndroidManifest.xml 中的activity
+
     ```
         android:windowSoftInputMode="adjustPan"
     ```
+
     2.使用KeyboardAvoidingView组件
+
   ```javascript
         // 使用ScrollView包裹当失去焦点是会自动收起键盘
         <ScrollView contentContainerStyle={styles.container}>
@@ -138,7 +145,8 @@ export default class WebWrapper extends PureComponent<WebWrapperProps> {
       </ScrollView>
   ```
   
-* ### 支付宝转账
+* ## 支付宝转账
+
   ```
     const url =
         'alipayqr://platformapi/startapp?saId=10000007&qrcode=https://qr.alipay.com/fkx12485r1525kbnh21uwfd';
@@ -166,30 +174,39 @@ export default class WebWrapper extends PureComponent<WebWrapperProps> {
         },
       ]);
   ```
-* ### 模拟器连接开发
+
+* ## 模拟器连接开发
+
   ```
     adb connect 127.0.0.1:62001 (夜神模拟器)
     adb connect 127.0.0.1:6555  (天天模拟器)
     adb shell input keyevent 82 (debug菜单)   
   ```
-* ### react-navigation生命周期
+
+* ## react-navigation生命周期
+
   ```
      <NavigationEvents onDidFocus={() => this.refreshData()} />
   ```
   
-* ### 图片选择器无法获取图片
-    https://github.com/react-native-community/react-native-image-picker/issues/1259
+* ## 图片选择器无法获取图片
+
+    <https://github.com/react-native-community/react-native-image-picker/issues/1259>
     需要额外添加权限
+
   ```
     <application
         ...
     android:requestLegacyExternalStorage="true">
   ```
   
-* ### 图片无法上传
-    *  https://github.com/facebook/react-native/issues/28551
-    *    https://github.com/react-native-community/react-native-image-picker/issues/1344
-* ### 卸载组件
+* ## 图片无法上传
+
+  * <https://github.com/facebook/react-native/issues/28551>
+  * <https://github.com/react-native-community/react-native-image-picker/issues/1344>
+
+* ## 卸载组件
+
   ```
     react-native unlink xxx
   ```

@@ -1,15 +1,20 @@
+---
+category: 前端
+tag:
+  - CSS
+---
 # CSS Modules下使用classnames
 
-### 情境
+## 情境
 
-​	*CSS Modules下使用 classnames 无法将classname转化为 hash 格式*
+​ *CSS Modules下使用 classnames 无法将classname转化为 hash 格式*
 
-### 解决方法
+## 解决方法
 
 ```javascript
 import classNames from 'classnames/bind';   //引用classnames/bind
 import styles from './index.less';
-let classStyles = classNames.bind(styles);	 //调用classNames
+let classStyles = classNames.bind(styles);  //调用classNames
 
 
 const tabItems = tabList.map((item, idx) => {
@@ -22,6 +27,7 @@ const tabItems = tabList.map((item, idx) => {
     <div key={idx} path={item.path} className={[itemCls]}>{item.name}</div>
   )
 ```
+
 或者：
 
 ```javascript

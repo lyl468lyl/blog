@@ -1,6 +1,12 @@
+---
+category: 前端
+tag:
+  - 积累
+  - code
+---
 # 前端常用代码块
 
-```
+```js
 const currency = (money, needDecimal = true) => {
   // 格式化货币显示
   if (isNaN(money)) {
@@ -82,7 +88,8 @@ export function makeUrl(uri, params) {
 ```
 
 ## 助手函数
-```
+
+```js
 import { Component } from "react";
 
 
@@ -116,16 +123,18 @@ export function sleep(seconds: number): Promise<void> {
 }
 ```
 
-
 ## 动态修改网站图标
-```
+
+```js
 const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
     link.href = data.systemFavicon;
     document.getElementsByTagName('head')[0].appendChild(link);
 ```
+
 ## 问题处理
+
 ```
 // 图片403
 <meta name="referrer" content="no-referrer" />
@@ -156,10 +165,6 @@ bindEvent(divChess, 'mousedown', function (event){
 
 })
 ```
-
-
-
-
 
 ## 工具函数集合
 
