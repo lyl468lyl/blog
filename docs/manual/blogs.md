@@ -1,3 +1,8 @@
+---
+category: 开发者手册
+tag:
+  - 积累
+---
 # 实用博客
 
 > nginx
@@ -13,4 +18,3 @@ Markdown绘制UML图：[在VSCode使用Markdown绘制UML图](<https://joven.site
 openAPI：[swagger和openAPI](<https://www.breakyizhan.com/swagger/2969.html/>)
 
 openAPI：[openAPI](<https://fishead.gitbooks.io/openapi-specification-zhcn-translation/content/versions/3.0.0.zhCN.html#pathsObject/>)
-

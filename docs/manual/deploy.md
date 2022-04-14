@@ -1,3 +1,8 @@
+---
+category: 开发者手册
+tag:
+  - 部署
+---
 # 自动部署
 
 ## Jenkins相关
@@ -14,4 +19,5 @@ steps {
 ```
 
 - 获取authToken
+
 >打开用户目录的 .npmrc，Linux在 ~/.npmrc， Windows在 C:/Users/<用户名>/.npmrc中，找到 \<registry-url\> 对应仓库地址
