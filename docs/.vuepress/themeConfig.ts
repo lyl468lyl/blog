@@ -7,12 +7,12 @@ export default defineThemeConfig({
 
   author: {
     name: '爵爵爵',
-    url: 'https://mrhope.site'
+    url: 'https://github.com/caigouzi1'
   },
 
   iconPrefix: 'iconfont icon-',
 
-  logo: '/logo.svg',
+  logo: '/avatar.png',
 
   repo: 'https://github.com/caigouzi1/blog',
 
@@ -24,7 +24,7 @@ export default defineThemeConfig({
   sidebar: false,
   // sidebar: sidebar,
 
-  footer: '默认页脚',
+  footer: '船到桥头自然直',
 
   displayFooter: true,
 
@@ -35,13 +35,12 @@ export default defineThemeConfig({
     // intro: '/intro.html',
     medias: {
       GitHub: 'https://github.com/caigouzi1'
-    },
-    categoryItem: []
+    }
   },
 
   encrypt: {
     config: {
-      '/guide/encrypt.html': ['1234']
+      '/guide/encrypt.html': ['woshicaigouzi']
     }
   },
 
