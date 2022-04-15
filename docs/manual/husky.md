@@ -44,7 +44,7 @@ tag:
    }
    ```
 
-1. 在.husky 文件夹下新建 pre-commit 文件，并添加一下内容
+1. 在.husky 文件夹下新建 pre-commit.sh 文件，并添加一下内容
 
    ```bash
    #!/bin/sh
