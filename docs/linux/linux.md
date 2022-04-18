@@ -5,7 +5,10 @@ tag:
   - linux
 ---
 
-# linux常用命令
+# linux相关
+
+> 操作工具
+> [xshell](https://51.ruyo.net/test/download_xshell_xftp.html)
 
 > ## 系统管理
 

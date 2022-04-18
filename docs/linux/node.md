@@ -28,6 +28,6 @@ tag:
 
 * 停止运行nodejs程序
 
-    ```
+    ```bash
       forever stop xxx.js
     ```
