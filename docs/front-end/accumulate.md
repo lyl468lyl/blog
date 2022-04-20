@@ -43,11 +43,13 @@ tag:
 
 - [print-js](https://printjs.crabbly.com/)：前端调打印机。 参数详情： <https://www.jianshu.com/p/bc079fbb20c7>
 
-- [Office预览](https://api.onlyoffice.com/editors/howitworks)    -     [使用文章](https://www.jianshu.com/p/2d4f977ffeac)
+- [Office预览](https://api.onlyoffice.com/editors/howitworks) - [使用文章](https://www.jianshu.com/p/2d4f977ffeac)
 
 - [Office在线预览](https://blog.csdn.net/qiangw09/article/details/96437744)
 - [nprogress](https://madewith.cn/23) ：加载进度条
 - [number-precision](https://www.npmjs.com/package/number-precision) ：保证精确度JS小数运算
+
+- [npkill](https://www.npmjs.com/package/npkill) ：清理node_modules
 
 ## JS相关
 
