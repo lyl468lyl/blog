@@ -8,19 +8,25 @@ tag:
 
 ## 前端开发
 
-> - **CSS图标 ：** [https://cssicon.space](https://cssicon.space/)
-> - **Navnav ：** [http://navnav.co/](http://navnav.co/) 页面样例
-> - **neumorphism ：** [https://neumorphism.io/](https://neumorphism.io/) 盒模型设置
-> - **codrops ：** [https://tympanus.net/codrops](https://tympanus.net/codrops)
-> - **CSSDeck ：** [https://cssdeck.com](https://cssdeck.com)
+- CSS图标： [https://cssicon.space](https://cssicon.space/)
+
+- Navnav ： [http://navnav.co/](http://navnav.co/) 页面样例  
+
+- neumorphism ： [https://neumorphism.io/](https://neumorphism.io/) 盒模型设置
+
+- codrops ： [https://tympanus.net/codrops](https://tympanus.net/codrops)
+
+- CSSDeck ： [https://cssdeck.com](https://cssdeck.com)
 
 ## 开发工具
 
-> - **在线工具 ：** [https://tool.lu](https://tool.lu/)
-> - **激活码 ：**[http://lookdiv.com](http://lookdiv.com/)
-> - **WebStrom ：**[https://wwx.lanzoux.com/b00o5o22d](https://wwx.lanzoux.com/b00o5o22d)
-> - **重启ide激活 :**[文章](https://laowangblog.com/ide-eval-resetter-jetbrains-trial.html) 、 [ide-eval-resetter下载](https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip)
-> - **xshell:** [下载](https://51.ruyo.net/test/download_xshell_xftp.html)
+- 在线工具 ： [https://tool.lu](https://tool.lu/)
+- 激活码 ：[http://lookdiv.com](http://lookdiv.com/)
+WebStrom ：[https://wwx.lanzoux.com/b00o5o22d](https://wwx.lanzoux.com/b00o5o22d)
+
+- 重启ide激活 :[文章](https://laowangblog.com/ide-eval-resetter-jetbrains-trial.html) 、 [ide-eval-resetter下载](https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip)
+- xshell: [下载](https://51.ruyo.net/test/download_xshell_xftp.html)
+- 手机投屏: [github](https://github.com/Tomotoes/scrcpy-gui)
 
 ## 下载
 >
