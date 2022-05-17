@@ -52,14 +52,7 @@ export default defineThemeConfig({
     seo: false,
 
     // 你也可以使用 Waline
-    comment: {
-      type: 'giscus',
-      repo: 'caigouzi1/blog',
-      repoId: 'R_kgDOG_Pt2A',
-      category: 'Announcements',
-      categoryId: 'DIC_kwDOG_Pt2M4COD69'
-    },
-
+    comment: false,
     mdEnhance: {
       enableAll: true,
       presentation: {
