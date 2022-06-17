@@ -1,8 +1,8 @@
-import {defineThemeConfig} from 'vuepress-theme-hope'
+import {hopeTheme} from 'vuepress-theme-hope'
 import navbar from './navbar'
 import sidebar from './sidebar'
 
-export default defineThemeConfig({
+export default hopeTheme({
   hostname: 'https://caigouzi1.github.io/blog/',
 
   author: {
@@ -18,18 +18,10 @@ export default defineThemeConfig({
 
   docsDir: '/docs',
 
-  // navbar
   navbar: navbar,
 
   sidebar: false,
   // sidebar: sidebar,
-
-  footer: '船到桥头自然直',
-
-  displayFooter: true,
-
-  pageInfo: ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime'],
-
   blog: {
     description: '一个前端开发者',
     // intro: '/intro.html',
@@ -37,6 +29,20 @@ export default defineThemeConfig({
       GitHub: 'https://github.com/caigouzi1'
     }
   },
+
+  footer: '船到桥头自然直',
+
+  displayFooter: true,
+
+  pageInfo: ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime'],
+
+  // locales: {
+  //   '/': {
+  //     navbar: false,
+
+  //     sidebar: false
+  //   }
+  // },
 
   encrypt: {
     config: {

@@ -1,14 +1,11 @@
 import {defineUserConfig} from 'vuepress'
-import type {DefaultThemeOptions} from 'vuepress'
-import {defineHopeConfig} from 'vuepress-theme-hope'
 import themeConfig from './themeConfig'
 
-export default defineHopeConfig({
+export default defineUserConfig({
   base: '/blog/',
   lang: 'zh-CN',
   title: '工作学习记录',
-  theme: 'hope',
-  themeConfig
+  theme: themeConfig
   // themeConfig: {
   //   home: '/',
   //   navbar: [

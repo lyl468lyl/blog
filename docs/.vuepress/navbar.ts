@@ -1,8 +1,8 @@
-import {defineNavbarConfig} from 'vuepress-theme-hope'
+import {navbar} from 'vuepress-theme-hope'
 
-export default defineNavbarConfig([
+export default navbar([
   // {text: '首页', link: '/home'},
   {text: '文章', link: '/', activeMatch: '^/(?!collection).*'},
   // {text: '文章', link: '/article', activeMatch: '^/'},
-  {text: '收藏', link: '/collection'}
+  {text: '导航', link: '/collection'}
 ])
