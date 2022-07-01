@@ -1,8 +1,9 @@
 ---
 article: false
+layout: SpecialLayout
 ---
 
-# 收藏
+# 导航
 
 ## 常用网址
 
