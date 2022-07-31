@@ -27,6 +27,7 @@ WebStrom ：[https://wwx.lanzoux.com/b00o5o22d](https://wwx.lanzoux.com/b00o5o22
 - 重启ide激活 :[文章](https://laowangblog.com/ide-eval-resetter-jetbrains-trial.html) 、 [ide-eval-resetter下载](https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip)
 - xshell: [下载](https://51.ruyo.net/test/download_xshell_xftp.html)
 - 手机投屏: [github](https://github.com/Tomotoes/scrcpy-gui)
+- 局域网传文件: [snapdrop](https://snapdrop.net/)
 
 ## 下载
 >
