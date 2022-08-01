@@ -20,6 +20,18 @@ Xcode版本需和MacOS版本匹配，对应关系及下载地址[参考](https:/
 brew install watchman
 ```
 
+如遇网络原因可用以下方式安装
+
+```bash
+unzip watchman-*-linux.zip
+cd watchman-vYYYY.MM.DD.00-linux
+sudo mkdir -p /usr/local/{bin,lib} /usr/local/var/run/watchman
+sudo cp bin/* /usr/local/bin
+sudo cp lib/* /usr/local/lib
+sudo chmod 755 /usr/local/bin/watchman
+sudo chmod 2777 /usr/local/var/run/watchman
+```
+
 [Homebrew国内镜像源文档参考](https://zhuanlan.zhihu.com/p/111014448)
 
 ## 3. CocoaPods安装
@@ -58,3 +70,11 @@ pod --version
 ># 设置默认版本
 >rvm use 2.7.0 --default
 >```
+
+## 4. 运行
+
+运行时需注意 pods 中 Deployment Target中IOS版本与 Podfile 中保持一致
+
+## 5. IOS打包
+
+[参考](https://blog.csdn.net/lizujun123/article/details/103937668)
