@@ -77,4 +77,50 @@ pod --version
 
 ## 5. IOS打包
 
-[参考](https://blog.csdn.net/lizujun123/article/details/103937668)
+### 1. 生成ipa安装包
+
+  1. 首先在 Xcode 中，将编译的目标机器设置成 “iOS Device”，然后点击”Product”–>“Archive”。
+
+  1. Archive 成功之后，就可以在 Xcode 的 Organizer 中看到相应的文件。接下来点击 Archive Information 中的 “Distribute App”
+
+  1. 在弹出界面中需要选择证书类型，选择方式如下：AdHoc(测试证书)选项
+
+  1. 选择完成后点 Next，Xcode 会自动将测试设备的签名信息附加上，并将相应的 IPA 文件导出
+
+  >打包配置过程[参考](https://blog.csdn.net/lizujun123/article/details/103937668)  
+  >生成ipa文件[参考](https://www.pgyer.com/doc/view/build_ipa)
+
+### 2. 签名(如未签名可能引起闪退)
+
+  1. 在苹果开发者官网下载对应的 ***.Provisioning 文件
+
+  1. 在Mac的钥匙串应用中选择我的证书导出对应的**p12证书文件**，并记住输入的密码
+
+  1. 下载 **[爱思助手](https://www.i4.cn/)**
+
+  1. 在依次点击**工具箱** -> **IPA签名** 按照要求上传对应文件即可
+
+### 3. 安装测试
+
+#### 使用Xcode安装
+
+1. 打开**XCode**依次点击 Window -> Devices and Simulators。
+
+1. 选择Devices > 点击下方 **+** ，选择IPA文件即可
+
+> **其他方式**  
+>
+> 1. [风车签名管理](http://sign.fengchetech.cn/)  
+> 1. 使用爱思助手安装
+
+## 6. IOS应用发布
+
+### AppStore发布
+
+#### 证书问题
+
+**报错：** `ITMS-90034: Missing or invalid signature - The bundle '...' at bundle path 'Payload/...' is not signed using an Apple submission certificate.`  
+  
+**分析：** 该报错为证书不受信任导致的  
+ **解决方法：** 重新安装[AppleWWDRCA](https://developer.apple.com/cn/support/code-signing/)，下载[页面](https://www.apple.com/certificateauthority/)选择**Apple Intermediate Certificates**下的**Worldwide Developer Relations - G3**下载双击安装即可。  
+**参考**： [解决iOS 证书不受信任的问题](https://cloud.tencent.com/developer/article/1958380)

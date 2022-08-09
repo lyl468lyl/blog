@@ -21,13 +21,21 @@ tag:
 ## 开发工具
 
 - 在线工具 ： [https://tool.lu](https://tool.lu/)
-- 激活码 ：[http://lookdiv.com](http://lookdiv.com/)
-WebStrom ：[https://wwx.lanzoux.com/b00o5o22d](https://wwx.lanzoux.com/b00o5o22d)
-
-- 重启ide激活 :[文章](https://laowangblog.com/ide-eval-resetter-jetbrains-trial.html) 、 [ide-eval-resetter下载](https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip)
-- xshell: [下载](https://51.ruyo.net/test/download_xshell_xftp.html)
+- xShell: [下载](https://51.ruyo.net/test/download_xshell_xftp.html)
 - 手机投屏: [github](https://github.com/Tomotoes/scrcpy-gui)
 - 局域网传文件: [snapdrop](https://snapdrop.net/)
+- 数据库可视化管理：[DBeaver](https://dbeaver.io/download/)
+
+## 激活
+
+### WebStorm
+
+>激活码 ：[http://lookdiv.com](http://lookdiv.com/)  
+
+>插件 ：
+>
+> - 重启ide激活 :[文章](https://laowangblog.com/ide-eval-resetter-jetbrains-trial.html) 、
+> - [ide-eval-resetter下载](https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip)[云盘下载地址](https://wwx.lanzoux.com/b00o5o22d)
 
 ## 下载
 >
@@ -39,14 +47,6 @@ WebStrom ：[https://wwx.lanzoux.com/b00o5o22d](https://wwx.lanzoux.com/b00o5o22
 > - **office下载 ：**[https://otp.landian.vip/zh-cn/](https://otp.landian.vip/zh-cn//)
 > - **Office Online Server:**   [服务部署](https://docs.fuyeor.com/office-online-server-2016oos/)
 
-## 开发网络
+## 网络
 >
 > - **github DNS修改 ：**[https://www.dogfight360.com/blog/](https://www.dogfight360.com/blog/)
-
-## http请求
->
-> - **处理跨域问题：**[https://zhuanlan.zhihu.com/p/104984869](https://zhuanlan.zhihu.com/p/104984869)
-
-> - **Chrome80后cookie携带问题:** [https://blog.csdn.net/sinat_36521655/article/details/104844667](https://blog.csdn.net/sinat_36521655/article/details/104844667)
-
-> - **Cookie 的 SameSite 属性:** [http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html](http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)
