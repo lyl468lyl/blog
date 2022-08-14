@@ -39,7 +39,7 @@ tag:
 
 ## 下载
 >
-> - **JDK下载 ：**[https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/](https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/)
+> - **JDK下载 ：**[AdoptOpenJDK](https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/) 、[Temurin](https://adoptium.net/?variant=openjdk11&jvmVariant=hotspot)
 > - **gradle下载 ：**[https://services.gradle.org/distributions/](https://services.gradle.org/distributions/)
 
 ## 其他

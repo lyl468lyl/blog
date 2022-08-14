@@ -19,7 +19,8 @@ tag:
 * ## 第三方组件
 
 1. [@voximplant/react-native-foreground-service](https://www.npmjs.com/package/@voximplant/react-native-foreground-service)
-1. [图标长按操作](react-native-shortcutmanager) - 相关关键词Shortcut
+1. [图标长按操作](react-native-shortcutmanager) - 相关关键词Shortcut  
+1. [react-native-sensors](https://www.npmjs.com/package/react-native-sensors) ：加速度计、陀螺仪、磁力计、气压计
 
 * ### WebView
 
