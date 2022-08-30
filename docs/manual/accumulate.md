@@ -45,7 +45,7 @@ tag:
 ## 其他
 >
 > - **office下载 ：**[https://otp.landian.vip/zh-cn/](https://otp.landian.vip/zh-cn//)
-> - **Office Online Server:**   [服务部署](https://docs.fuyeor.com/office-online-server-2016oos/)
+> - **Office Online Server ：**   [服务部署](https://docs.fuyeor.com/office-online-server-2016oos/)
 
 ## 网络
 >
