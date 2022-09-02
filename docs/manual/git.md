@@ -159,6 +159,17 @@ git rm fileName
 git rm –r *
 ```
 
+## Fork 代码同步
+
+```bash
+git remote -v
+git remote add upstream [原仓库clone链接]
+git remote -v
+git fetch upstream
+git merge upstream/master
+git push origin master
+```
+
 ## 实用案例
 
 - ### git 如何把分支代码合并到 master 主分支上
