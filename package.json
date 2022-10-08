@@ -14,6 +14,6 @@
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^2.0.0-beta.51",
-    "vuepress-theme-hope": "2.0.0-beta.106"
+    "vuepress-theme-hope": "2.0.0-beta.108"
   }
 }
