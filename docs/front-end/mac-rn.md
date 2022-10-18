@@ -115,7 +115,12 @@ pod --version
 
 ## 6. IOS应用发布
 
-### AppStore发布
+### AppStore（testflight）发布
+
+#### 上传工具
+
+[上传工具相关文档](https://help.apple.com/app-store-connect/#/devb1c185036)
+[altool参数](https://help.apple.com/itc/apploader/#/apdATD1E53-D1E1A1303-D1E53A1126)
 
 #### 证书问题
 

@@ -1,6 +1,5 @@
 ---
 article: false
-layout: SpecialLayout
 ---
 
 # 导航

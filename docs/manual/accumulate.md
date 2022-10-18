@@ -45,6 +45,7 @@ tag:
 ## 其他
 >
 > - **office下载 ：**[https://otp.landian.vip/zh-cn/](https://otp.landian.vip/zh-cn//)
+> - **office激活 ：**[HEU KMS Activator](https://github.com/zbezj/HEU_KMS_Activator/releases)
 > - **Office Online Server ：**   [服务部署](https://docs.fuyeor.com/office-online-server-2016oos/)
 
 ## 网络

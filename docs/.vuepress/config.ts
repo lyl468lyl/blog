@@ -1,28 +1,22 @@
-import {defineUserConfig} from 'vuepress'
+// .vuepress/theme/index.ts
+import {defineUserConfig, Theme} from 'vuepress'
+import {path} from '@vuepress/utils'
 import themeConfig from './themeConfig'
+
+const customTheme = (): Theme => {
+  return {
+    name: 'vuepress-theme-local',
+    extends: themeConfig,
+    alias: {
+      '@theme-hope/components/HomePage.js': path.resolve(__dirname, './components/HomePage')
+    }
+  }
+}
 
 export default defineUserConfig({
   base: '/blog/',
   lang: 'zh-CN',
   title: '工作学习记录',
-  theme: themeConfig
-  // themeConfig: {
-  //   home: '/',
-  //   navbar: [
-  //     {text: '首页', link: '/'},
-  //     {text: '收藏', link: '/collection'}
-  //   ],
-  //   repo: 'caigouzi1/blog',
-  //   contributors: false,
-  //   editLink: false,
-  //   lastUpdatedText: '更新时间',
-  //   configureWebpack: {
-  //     resolve: {
-  //       alias: {
-  //         '@': 'path/to/some/dir'
-  //       }
-  //     }
-  //   },
-  //   plugins: {blog: true}
-  // }
+  theme: customTheme()
+  // theme: themeConfig
 })
