@@ -15,13 +15,15 @@ export const webList: ICategary[] = [
     list: [
       { title: 'Ant Design 文档', link: 'https://ant-design.antgroup.com/components/overview-cn/' },
       { title: 'Umi 文档', link: 'https://umijs.org/zh-CN/docs' },
-      { title: 'Taro 文档', link: 'https://taro-docs.jd.com/taro/docs/README/index.html' },
+      { title: 'Taro 文档', link: 'https://docs.taro.zone/docs' },
     ],
   },
   {
     category: 'Vue',
     list: [
       { title: 'Vue2 文档', link: 'https://cn.vuejs.org/v2/guide' },
+      { title: 'Antd Vue 文档', link: 'https://1x.antdv.com/docs/vue/introduce-cn/' },
+      { title: 'Vue3 文档', link: 'https://cn.vuejs.org/guide/introduction.html' },
       { title: 'Element 文档', link: 'https://element.eleme.cn/#/zh-CN/component/installation' },
       { title: 'VuePress 文档', link: 'https://vuepress.vuejs.org/zh/guide/' },
     ],

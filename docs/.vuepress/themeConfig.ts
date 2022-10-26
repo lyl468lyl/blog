@@ -1,4 +1,4 @@
-import {hopeTheme} from 'vuepress-theme-hope'
+import { hopeTheme } from 'vuepress-theme-hope'
 import navbar from './navbar'
 import sidebar from './sidebar'
 
@@ -7,7 +7,7 @@ export default hopeTheme({
 
   author: {
     name: '爵爵爵',
-    url: 'https://github.com/caigouzi1'
+    url: 'https://github.com/caigouzi1',
   },
 
   iconPrefix: 'iconfont icon-',
@@ -26,8 +26,8 @@ export default hopeTheme({
     description: '一个前端开发者',
     // intro: '/intro.html',
     medias: {
-      GitHub: 'https://github.com/caigouzi1'
-    }
+      GitHub: 'https://github.com/caigouzi1',
+    },
   },
 
   footer: '船到桥头自然直',
@@ -46,24 +46,24 @@ export default hopeTheme({
 
   encrypt: {
     config: {
-      '/guide/encrypt.html': ['woshicaigouzi']
-    }
+      '/guide/encrypt.html': ['woshicaigouzi'],
+    },
   },
 
   plugins: {
     blog: {
       autoExcerpt: true,
-      article: '/'
+      article: '/',
     },
     seo: false,
 
     // 你也可以使用 Waline
     comment: false,
     mdEnhance: {
-      enableAll: true,
+      // enableAll: true,
       presentation: {
-        plugins: ['highlight', 'math', 'search', 'notes', 'zoom']
-      }
-    }
-  }
+        plugins: ['highlight', 'math', 'search', 'notes', 'zoom'],
+      },
+    },
+  },
 })

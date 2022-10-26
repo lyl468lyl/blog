@@ -3,11 +3,11 @@
     <div class="view-wrapper">
       <div class="bg" />
       <div class="view-body">
-        <div class="tabs">
+        <!-- <div class="tabs">
           <div v-for="categoryItem in webData" class="tab-item">
             {{categoryItem.category}}
           </div>
-        </div>
+        </div> -->
         <div v-for="categoryItem in webData">
           <div class="title"> {{categoryItem.category}} </div>
           <div class="grid">

@@ -1,7 +1,7 @@
 ---
 home: true
-icon: home
-title: 项目主页
+icon: blog
+title: 导航
 ---
 
 这是普通主页的案例。你可以在这里放置你的主体内容。

@@ -27,11 +27,19 @@ npm install express --registry https://registry.npmjs.org
 > npmMirror -- `https://skimdb.npmjs.com/registry/` \
 > edunpm ----- `http://registry.enpmjs.org/`
 
-## 出现 sass 相关的安装错误
+## 提高node模块安装速度
 
-> ```bash
-> npm install -g mirror-config-china
-> ```
+```bash
+npm install -g mirror-config-china
+```
+
+>出现 sass 相关的安装错误时可解决该问题
+
+## npm scripts相关
+
+### pre和post两个钩子
+
+>npm会先查看有没有定义prelint和postlint两个钩子，如果有的话，就会先执行npm run prelint，然后执行npm run lint，最后执行npm run postlint
 
 ## 常用命令
 
