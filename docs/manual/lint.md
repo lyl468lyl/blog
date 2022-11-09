@@ -15,14 +15,24 @@ tag:
 ### 安装依赖
 
   ```bash
-    npm install --save-dev eslint eslint-plugin-vue
+    npm install --save-dev eslint eslint-plugin-vue eslint-define-config
   ```
+
+> 注意
+> 当`package.json`文件中配置`"type": "module"`项时要将对应的`.js`配置文件改为`.cjs`
 
 ### ESLint配置
 
+`.eslintrc.js`文件
+
 ```js
-// .eslintrc.js
-module.exports = {
+const { defineConfig } = require('eslint-define-config');
+module.exports = defineConfig({
+  env: {
+  browser: true,
+  es6: true,
+  node: true,
+ },
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
@@ -41,9 +51,8 @@ module.exports = {
   },
   globals: {
     uni: 'readonly', 
-    module: 'readonly',
   }
-}
+})
 ```
 
 **globals配置说明：**  
@@ -56,15 +65,16 @@ off 表示禁用全局变量
 
 ### 编辑器配置
 
+`.editorconfig`文件
+
 ```editorconfig
-// .editorconfig
 [*]
 charset=utf-8
 end_of_line=lf
-indent_size=2  //tab缩进2个空格
+indent_size=2
 ```
 
-jsconfig.json文件
+`jsconfig.json`文件
 
 ```json
 {
@@ -92,8 +102,9 @@ types: TypeScript 编译器会默认引入typeRoot下所有的声明文件，但
 
 ### prettier相关配置
 
+`.prettierrc.js`文件
+
 ```js
-// .prettierrc.js
 module.exports = {
   singleQuote: true,
   printWidth: 120 //防止频繁换行
