@@ -56,6 +56,9 @@ export default hopeTheme({
       article: '/',
     },
     seo: false,
+    pwa: {
+      favicon: '/blog/logo.ico',
+    },
 
     // 你也可以使用 Waline
     comment: false,

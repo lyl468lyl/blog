@@ -22,6 +22,7 @@ export const webList: ICategary[] = [
     list: [
       { title: 'Vue2 文档', link: 'https://cn.vuejs.org/v2/guide' },
       { title: 'Vue3 文档', link: 'https://cn.vuejs.org/guide/introduction.html' },
+      { title: 'Vite 文档', link: 'https://cn.vitejs.dev/guide/' },
       { title: 'Antd Vue 文档', link: 'https://1x.antdv.com/docs/vue/introduce-cn/' },
       { title: 'Element 文档', link: 'https://element.eleme.cn/#/zh-CN/component/installation' },
       { title: 'element-plus 文档', link: 'https://element-plus.gitee.io/zh-CN/component/button.html' },

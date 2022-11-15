@@ -70,10 +70,20 @@ npm list cowsay
 ### 私有镜像npm登陆问题
 
 ```bash
-    npm set registry http://nvwa.jiuqi.com.cn/nexus/repository/npm-nvware-group/  
-    npm config set //nvwa.jiuqi.com.cn/nexus/repository/npm-nvware-group/:_authToken=NpmToken.3bb085e0-a9b5-36e1-be9f-311bb5630c2b  
+npm set registry http://nvwa.jiuqi.com.cn/nexus/repository/npm-nvware-group/  
+npm config set //nvwa.jiuqi.com.cn/nexus/repository/npm-nvware-group/:_authToken=NpmToken.3bb085e0-a9b5-36e1-be9f-311bb5630c2b  
 ```
 
 - 获取authToken
 
 >打开用户目录的 .npmrc，Linux在 ~/.npmrc， Windows在 C:/Users/<用户名>/.npmrc中，找到 \<registry-url\> 对应仓库地址
+
+## 使用node自带的pnpm或yarn
+
+> Node.js 默认提供 npm 包管理器，Corepack 为您提供 Yarn 和 pnpm，而无需安装它们。  
+> Corepack 默认与 Node.js 14.19.0 和 16.9.0 一起分发，所以保证 Node.js 版本大于等于 16.9.0。
+
+```bash
+corepack enable
+corepack prepare pnpm@7.14.0 --activate
+```

@@ -17,6 +17,7 @@ export default defineUserConfig({
   base: '/blog/',
   lang: 'zh-CN',
   title: '工作学习记录',
-  theme: customTheme()
+  theme: customTheme(),
+  shouldPrefetch: false,
   // theme: themeConfig
 })
