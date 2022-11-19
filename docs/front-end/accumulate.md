@@ -43,13 +43,11 @@ tag:
 
 - [print-js](https://printjs.crabbly.com/)：前端调打印机。 参数详情： <https://www.jianshu.com/p/bc079fbb20c7>
 
-- [Office预览](https://api.onlyoffice.com/editors/howitworks) - [使用文章](https://www.jianshu.com/p/2d4f977ffeac)
-
-- [Office在线预览](https://blog.csdn.net/qiangw09/article/details/96437744)
 - [nprogress](https://madewith.cn/23) ：加载进度条
 - [number-precision](https://www.npmjs.com/package/number-precision) ：保证精确度JS小数运算
 
 - [npkill](https://www.npmjs.com/package/npkill) ：清理node_modules
+- [cronosjs](https://www.npmjs.com/package/cronosjs)： Node和浏览器端定时任务
 
 ## JS相关
 
@@ -64,3 +62,8 @@ tag:
 
 - [Vue 选座](https://github.com/zenghao0219/seat-select-wechat)
 - [MarkDown实现目录](https://blog.csdn.net/ssjdoudou/article/details/113097733)
+
+- [kkfileview](https://kkfileview.keking.cn/zh-cn/index.html): 文件预览
+
+- [Office预览](https://api.onlyoffice.com/editors/howitworks) - [使用文章](https://www.jianshu.com/p/2d4f977ffeac)
+- [Office在线预览](https://blog.csdn.net/qiangw09/article/details/96437744)
