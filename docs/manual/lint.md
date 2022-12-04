@@ -16,6 +16,9 @@ tag:
 
   ```bash
     npm install --save-dev eslint eslint-plugin-vue eslint-define-config
+
+    # 如果使用 typescript
+    npm install --save-dev typescript @typescript-eslint/parser
   ```
 
 > 注意
@@ -29,19 +32,25 @@ tag:
 const { defineConfig } = require('eslint-define-config');
 module.exports = defineConfig({
   env: {
-  browser: true,
-  es6: true,
-  node: true,
- },
+    browser: true,
+    es6: true,
+    node: true,
+  },
+  parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     // 'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
   ],
+  // typescript
+  // parserOptions: {
+  //   parser: '@typescript-eslint/parser',
+  // },
   plugins:['vue'],
   rules: {
     // override/add rules settings here, such as:
     // 'vue/no-unused-vars': 'error'
+    'semi': ['error', 'never'],  // 禁止行尾分号
     'vue/multi-word-component-names': 0,  // 关闭组件名必须为驼峰
     'indent': ['error', 'tab'], // 使用tab缩进
     'quotes': [2, 'single'],  // 使用单引号
