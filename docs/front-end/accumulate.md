@@ -21,6 +21,7 @@ tag:
 1. [vue-circle-menu](https://www.npmjs.com/package/vue-circle-menu): 圆形菜单
 1. [markdown-it-vue](https://www.npmjs.com/package/markdown-it-vue): 带目录的markdown
 1. [mavon-editor](https://www.npmjs.com/package/mavon-editor): 带目录的markdown
+1. [vue-lottie](https://www.npmjs.com/package/vue-lottie): 运行AE动画
 
 ## css样式
 
@@ -51,7 +52,7 @@ tag:
 
 ## JS相关
 
-- [ES新特性](https://www.suchun.vip/my-blog/ECMAScript/%E5%89%8D%E8%A8%80.html#es-%E6%96%87%E6%A1%A3)
+- [ES新特性](https://suchun.vip/ECMAScript/ES6.html)
 - [string-strip-html](https://www.npmjs.com/package/string-strip-html/)：html去标签转文字。
 
 ## 项目配置

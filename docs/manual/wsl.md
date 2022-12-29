@@ -10,6 +10,7 @@ tag:
 
 1. [Linux系统各发行版换国内yum或apt源，加速软件下载更新](https://zhuanlan.zhihu.com/p/122214146)
 
+> [微软官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands)
 ## 常用命令
 
 ```bash
@@ -27,6 +28,9 @@ wsl --set-default-version <Version>
 
 # 设置默认 Linux 发行版
 wsl --set-default <Distribution Name>
+
+# 注销或卸载 Linux 发行版
+wsl --unregister <DistributionName>
 ```
 
 ## VsCode的使用

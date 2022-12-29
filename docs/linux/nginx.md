@@ -25,3 +25,24 @@ tag:
   cd /var/log/nginx
   tail -100f error.log
 ```
+
+## 常用配置
+
+```nginx
+  server {
+    listen       80;
+    server_name  localhost;
+    try_files $uri $uri/ /index.html;
+    location /api/ {
+      rewrite  ^/api/(.*) /$1 break; #过滤url中的api前缀
+      proxy_pass http://localhost:8090;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+  }
+```

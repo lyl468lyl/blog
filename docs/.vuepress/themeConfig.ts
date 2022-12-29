@@ -52,7 +52,7 @@ export default hopeTheme({
 
   plugins: {
     blog: {
-      autoExcerpt: true,
+      excerpt: false,
       article: '/',
     },
     seo: false,
