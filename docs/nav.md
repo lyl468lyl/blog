@@ -1,5 +1,6 @@
 ---
 home: true
+layout: BlogHome
 icon: blog
 title: 导航
 ---
