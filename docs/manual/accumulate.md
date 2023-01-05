@@ -27,6 +27,7 @@ tag:
 - 手机投屏: [github](https://github.com/Tomotoes/scrcpy-gui)
 - 局域网传文件: [snapdrop](https://snapdrop.net/)
 - 数据库可视化管理：[DBeaver](https://dbeaver.io/download/)
+- android应用架构分析工具: [libchecker](https://github.com/zhaobozhen/LibChecker)
 
 ## 激活
 
@@ -53,3 +54,7 @@ tag:
 ## 网络
 >
 > - **github DNS修改 ：**[https://www.dogfight360.com/blog/](https://www.dogfight360.com/blog/)
+
+## 日常
+
+- [bypass 抢票软件](https://www.bypass.cn/)
