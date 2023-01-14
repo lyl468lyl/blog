@@ -6,6 +6,20 @@ tag:
 ---
 # 前端内容积累
 
+## 参考
+
+- CSS图标： [https://cssicon.space](https://cssicon.space/)
+
+- Navnav ： [http://navnav.co/](http://navnav.co/) 页面样例  
+
+- neumorphism ： [https://neumorphism.io/](https://neumorphism.io/) 盒模型设置
+
+- codrops ： [https://tympanus.net/codrops](https://tympanus.net/codrops)
+
+- CSSDeck ： [https://cssdeck.com](https://cssdeck.com)
+
+- LottieFiles: [https://lottiefiles.com/LottieFiles](https://lottiefiles.com/LottieFiles) 动画库
+
 ## React组件库
 
 1. [react-uwp](https://www.react-uwp.com/)：仿win10风的组件

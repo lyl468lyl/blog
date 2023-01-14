@@ -6,20 +6,6 @@ tag:
 ---
 # 常用工具积累
 
-## 前端开发
-
-- CSS图标： [https://cssicon.space](https://cssicon.space/)
-
-- Navnav ： [http://navnav.co/](http://navnav.co/) 页面样例  
-
-- neumorphism ： [https://neumorphism.io/](https://neumorphism.io/) 盒模型设置
-
-- codrops ： [https://tympanus.net/codrops](https://tympanus.net/codrops)
-
-- CSSDeck ： [https://cssdeck.com](https://cssdeck.com)
-
-- LottieFiles: [https://lottiefiles.com/LottieFiles](https://lottiefiles.com/LottieFiles) 动画库
-
 ## 开发工具
 
 - 在线工具 ： [https://tool.lu](https://tool.lu/)
