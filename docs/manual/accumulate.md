@@ -15,6 +15,7 @@ tag:
 - 数据库可视化管理：[DBeaver](https://dbeaver.io/download/)
 - android应用架构分析工具: [libchecker](https://github.com/zhaobozhen/LibChecker)
 - ssh工具: [tabby](https://tabby.sh/)
+- github下载加速: [doget](https://doget.nocsdn.com/#/)
 
 ## 激活
 
