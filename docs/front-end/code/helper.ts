@@ -21,3 +21,29 @@ export function byteConvert(bytes: number): string {
   }
   return bytes + ' ' + symbols[i]
 }
+
+/**
+ * @description 判断滚动条是否触底
+ * @param target
+ * @returns boolean
+ */
+export function isScrollTouchBottom(target: Element) {
+  if (target) {
+    const { scrollTop, clientHeight, scrollHeight } = target
+    return scrollTop + clientHeight === scrollHeight
+  }
+  return false
+}
+
+/**
+ * @description 将滚动条移动到底部
+ * @param scrollElement
+ */
+export function toBottom(scrollElement: Element) {
+  if (scrollElement) {
+    scrollElement.scrollTo({
+      top: scrollElement.scrollHeight,
+      behavior: 'smooth',
+    })
+  }
+}
