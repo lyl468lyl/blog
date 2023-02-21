@@ -51,6 +51,7 @@ export default hopeTheme({
   },
 
   plugins: {
+    autoCatalog :false,
     blog: {
       excerpt: false,
       excerptLength: 0,

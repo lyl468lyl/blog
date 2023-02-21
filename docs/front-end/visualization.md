@@ -12,6 +12,7 @@ tag:
 - [动画库](https://juejin.cn/post/6844904016292347918)  
 - [3D轮播图](https://wlada.github.io/vue-carousel-3d/guide/)
 - [灯果可视化:可视化模板参考](http://www.dengguobi.com/?type=store)
+- [DataV 可视化组件:边框、背景等](https://www.npmjs.com/package/@jiaminghi/data-view)
 
 ## echarts图表
 
