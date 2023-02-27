@@ -48,8 +48,9 @@ const webData = ref<ICategary[]>(webList)
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('https://api.mfstudio.cc/bing') 100% 100% no-repeat;
+      background: url('https://api.mfstudio.cc/bing') no-repeat;
       background-position: center;
+      background-size: cover;
       // filter: blur(10px);
     }
 
