@@ -14,6 +14,16 @@ tag:
 
 ## 生成运行文件
 
+### 初始化项目
+
+```sh
+# xxx为项目包名
+go mod init xxx
+
+# 自动现在项目依赖
+go mod tidy
+```
+
 ### 代码
 
 ```go
