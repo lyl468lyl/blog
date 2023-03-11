@@ -16,6 +16,8 @@ export default hopeTheme({
 
   repo: 'https://github.com/caigouzi1/blog',
 
+  docsBranch: 'master',
+
   docsDir: '/docs',
 
   navbar: navbar,
@@ -34,7 +36,11 @@ export default hopeTheme({
 
   displayFooter: true,
 
-  pageInfo: ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime'],
+  pageInfo: ['Original', 'Date', 'Category', 'Tag', 'ReadingTime'],
+
+  lastUpdated: true,
+
+  editLink: true,
 
   // locales: {
   //   '/': {
