@@ -6,7 +6,7 @@ tag:
   - echarts
 ---
 
-# echarts合并多国数据数据
+# echarts合并多国数据
 
 ## 下载地图数据
 
