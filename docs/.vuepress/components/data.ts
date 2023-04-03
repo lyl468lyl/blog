@@ -14,7 +14,7 @@ export const webList: ICategary[] = [
     category: 'React',
     list: [
       { title: 'Ant Design 文档', link: 'https://ant-design.antgroup.com/components/overview-cn/' },
-      { title: 'Umi 文档', link: 'https://umijs.org/zh-CN/docs' },
+      { title: 'Umi 文档', link: 'https://umijs.org/docs/tutorials/getting-started' },
     ],
   },
   {
@@ -50,6 +50,13 @@ export const webList: ICategary[] = [
     list: [
       { title: 'docker', link: 'https://docker.easydoc.net/doc/81170005/cCewZWoN/lTKfePfP' },
       { title: 'Kubenetes', link: 'https://k8s.easydoc.net/docs/dRiQjyTY/28366845/6GiNOzyZ/9EX8Cp45' },
+    ],
+  },
+  {
+    category: '常用网站',
+    list: [
+      { title: 'ChatGPT 镜像站', link: 'https://chat9.yqcloud.top/' },
+      { title: 'ChatGPT 镜像站合集', link: 'https://cc.ai55.cc/' },
     ],
   },
 ]
