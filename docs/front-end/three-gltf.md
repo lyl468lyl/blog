@@ -7,12 +7,12 @@ tag:
 
 # ThreeJs模型渲染
 
-::: playground#vue ThreeJs模型渲染
+::: playground#vue threejs模型渲染
 
 @file App.vue
 
 ```vue
-@include(code/threeDemo.vue)
+<!-- @include: code/threeDemo.vue -->
 ```
 
 @import

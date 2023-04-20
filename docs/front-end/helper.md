@@ -10,5 +10,6 @@ tag:
 ## helper
 
 ```ts
-@include(code/helper.ts)
+<!-- @include: code/helper.ts -->
+
 ```

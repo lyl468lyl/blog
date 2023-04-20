@@ -10,11 +10,11 @@ tag:
 ## 切片上传
 
 ```vue
-@include(code/SliceUpload.vue)
+<!-- @include: code/SliceUpload.vue -->
 ```
 
 ## 分片下载
 
 ```js
-@include(code/fileHelper.js)
+<!-- @include: code/fileHelper.js -->
 ```
