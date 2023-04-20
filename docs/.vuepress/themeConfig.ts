@@ -72,6 +72,24 @@ export default hopeTheme({
     comment: false,
     mdEnhance: {
       // enableAll: true,
+      demo: true,  // 代码演示
+      vuePlayground: true,  // Vue 交互演示
+      playground: {
+        // 添加预设
+        presets: [
+          "ts",
+          "vue",
+        ],
+        // 设置内置预设 (可选)
+        config: {
+          ts: {
+            // ...
+          },
+          vue: {
+            // ...
+          },
+        },
+      },
       include: true,
       presentation: {
         plugins: ['highlight', 'math', 'search', 'notes', 'zoom'],

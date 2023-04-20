@@ -10,6 +10,26 @@ tag:
 ## 本地生成密钥和公钥
 
 1. 执行`ssh-keygen -t rsa -C "内容可随意输入"`然后多次按回车
+
+  > 如需要管理多个密钥
+  > ssh-keygen -t rsa -C 'xxxxx@youremail.com' -f ~/.ssh/xxx_id_rsa
+  > 生成并配置config文件
+  >
+  > ```
+  > # gitee
+  > Host gitee.com
+  > HostName gitee.com
+  > PreferredAuthentications publickey
+  > IdentityFile ~/.ssh/gitee_id_rsa
+  > 
+  > # github
+  > 
+  > Host github.com
+  > HostName github.com
+  > PreferredAuthentications publickey
+  > IdentityFile ~/.ssh/id_rsa
+  > ```
+
 1. 在windows的用户目录下如`C:\Users\xxx\.ssh`文件夹下查看相关文件  
 
   >id_rsa.pub 为公钥文件  
