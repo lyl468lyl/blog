@@ -1,6 +1,8 @@
 import { hopeTheme } from 'vuepress-theme-hope'
 import navbar from './navbar'
 import sidebar from './sidebar'
+import {getDirname, path} from '@vuepress/utils'
+const __dirname = getDirname(import.meta.url);
 
 export default hopeTheme({
   hostname: 'https://caigouzi1.github.io/blog/',
@@ -96,4 +98,4 @@ export default hopeTheme({
       },
     },
   },
-})
+}, {custom: true})

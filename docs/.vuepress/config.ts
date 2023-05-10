@@ -18,7 +18,9 @@ export default defineUserConfig({
   base: '/blog/',
   lang: 'zh-CN',
   title: '工作学习记录',
-  theme: customTheme(),
+  theme: themeConfig,
+  alias: {
+    '@theme-hope/modules/blog/components/BlogHome': path.resolve(__dirname, './components/HomePage')
+  },
   shouldPrefetch: false,
-  // theme: themeConfig
 })

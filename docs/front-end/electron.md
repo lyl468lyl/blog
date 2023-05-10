@@ -125,3 +125,7 @@ yarn add electron-builder  --dev
     ...
 }
   ```
+
+## electron与node对应版本
+
+访问 <https://releases.electronjs.org/releases.json> 查看对应关系
