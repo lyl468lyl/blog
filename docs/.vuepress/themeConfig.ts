@@ -70,8 +70,15 @@ export default hopeTheme({
       favicon: '/blog/logo.ico',
     },
 
-    // 你也可以使用 Waline
-    comment: false,
+    // 评论插件配置
+    comment: {
+      provider: 'Giscus',
+      comment: true,
+      repo:"caigouzi1/blog",
+      repoId:"R_kgDOGubgfg",
+      category:"Q&A",
+      categoryId:"DIC_kwDOGubgfs4CW2ab",
+    },
     mdEnhance: {
       // enableAll: true,
       demo: true,  // 代码演示

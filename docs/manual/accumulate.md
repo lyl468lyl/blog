@@ -10,6 +10,7 @@ tag:
 
 - 在线工具 ： [https://tool.lu](https://tool.lu/)
 - xShell: [下载](https://51.ruyo.net/test/download_xshell_xftp.html)
+- finalshell: [下载](http://www.hostbuf.com/)
 - 手机投屏: [github](https://github.com/Tomotoes/scrcpy-gui)
 - 局域网传文件: [snapdrop](https://snapdrop.net/)
 - 数据库可视化管理：[DBeaver](https://dbeaver.io/download/)
