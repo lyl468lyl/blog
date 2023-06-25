@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-b312630c","path":"/tag/erp/","title":"erp 标签","lang":"zh-CN","frontmatter":{"title":"erp 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"erp","key":"tag"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null}');export{e as data};
