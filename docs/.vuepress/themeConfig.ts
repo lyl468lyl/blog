@@ -18,7 +18,7 @@ export default hopeTheme({
 
   repo: 'https://github.com/lyl468lyl/blog',
 
-  docsBranch: 'master',
+  docsBranch: 'main',
 
   docsDir: '/docs',
 
@@ -73,7 +73,7 @@ export default hopeTheme({
     // 评论插件配置
     comment: {
       provider: 'Giscus',
-      comment: true,
+      comment: false,
       repo:"caigouzi1/blog",
       repoId:"R_kgDOGubgfg",
       category:"Q&A",
