@@ -1,25 +1,9 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c5148dba8193fe1c1e78d373a13f718310d27630
 ---
-
 date: 2013-6-25
-
-category: linux
-
+category: 运维
 tag:
-
   - docker
-<<<<<<< HEAD
-
-=======
->>>>>>> c5148dba8193fe1c1e78d373a13f718310d27630
 ---
-
-
-
 # docker+jekins 随手笔记
 
 1.安装docker
