@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-13275df4","path":"/tag/gitlab/","title":"gitlab 标签","lang":"zh-CN","frontmatter":{"title":"gitlab 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"gitlab","key":"tag"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null}');export{e as data};
