@@ -1,23 +1,9 @@
 ---
-<<<<<<< HEAD
-
 date: 2013-6-25
-
-category: 数据仓
-
-tag:
-
-  - gitlab
-
----
-
-=======
-date: 2013-6-25
-category: 代码库
+category: 运维
 tag:
   - gitlab
 ---
->>>>>>> c5148dba8193fe1c1e78d373a13f718310d27630
 #  gitlab 使用文档                                           
 
 用户名:root/liyulong
