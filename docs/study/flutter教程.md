@@ -1,15 +1,3 @@
-\---
-
-date: 2013-6-25
-
-category: 移动端
-
-tag:
-
-  \- flutter
-
-\---
-
 
 
 # flutter教程
