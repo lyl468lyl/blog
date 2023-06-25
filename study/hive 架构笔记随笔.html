@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-beta.62" />
+    <meta name="theme" content="VuePress Theme Hope" />
+    <link rel="icon" href="/blog/logo.ico"><link rel="manifest" href="/blog/manifest.webmanifest" crossorigin="use-credentials"><meta name="theme-color" content="#46bd87"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><title>hive架构教程 | 工作学习记录</title><meta name="description" content="">
+    <style>
+      :root {
+        --bg-color: #fff;
+      }
+
+      html[data-theme="dark"] {
+        --bg-color: #1d1e1f;
+      }
+
+      html,
+      body {
+        background: var(--bg-color);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <link rel="preload" href="/blog/assets/style-6b63528b.css" as="style"><link rel="stylesheet" href="/blog/assets/style-6b63528b.css">
+    <link rel="modulepreload" href="/blog/assets/app-7d162ccd.js"><link rel="modulepreload" href="/blog/assets/hive 架构笔记随笔.html-63ad1232.js"><link rel="modulepreload" href="/blog/assets/hive 架构笔记随笔.html-1c348050.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="vp-skip-link sr-only">跳至主要內容</a><!--]--><div class="theme-container no-sidebar has-toc"><!--[--><header class="vp-navbar" id="navbar"><div class="vp-navbar-start"><button type="button" class="vp-toggle-sidebar-button" title="Toggle Sidebar"><span class="icon"></span></button><!--[--><!----><!--]--><!--[--><a href="/blog/" class="vp-brand"><img class="vp-nav-logo" src="/blog/avatar.png" alt="工作学习记录"><!----><span class="vp-site-name hide-in-pad">工作学习记录</span></a><!--]--><!--[--><!----><!--]--></div><div class="vp-navbar-center"><!--[--><!----><!--]--><!--[--><nav class="vp-nav-links"><div class="nav-item hide-in-mobile"><a href="/blog/" class="nav-link active" aria-label="笔记"><!---->笔记<!----></a></div><div class="nav-item hide-in-mobile"><a href="/blog/nav.html" class="nav-link" aria-label="导航"><!---->导航<!----></a></div></nav><!--]--><!--[--><!----><!--]--></div><div class="vp-navbar-end"><!--[--><!----><!--]--><!--[--><!----><div class="nav-item"><a class="vp-repo-link" href="https://github.com/lyl468lyl/blog" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" class="icon github-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="github icon" style="width:1.25rem;height:1.25rem;vertical-align:middle;"><path d="M511.957 21.333C241.024 21.333 21.333 240.981 21.333 512c0 216.832 140.544 400.725 335.574 465.664 24.49 4.395 32.256-10.07 32.256-23.083 0-11.69.256-44.245 0-85.205-136.448 29.61-164.736-64.64-164.736-64.64-22.315-56.704-54.4-71.765-54.4-71.765-44.587-30.464 3.285-29.824 3.285-29.824 49.195 3.413 75.179 50.517 75.179 50.517 43.776 75.008 114.816 53.333 142.762 40.79 4.523-31.66 17.152-53.377 31.19-65.537-108.971-12.458-223.488-54.485-223.488-242.602 0-53.547 19.114-97.323 50.517-131.67-5.035-12.33-21.93-62.293 4.779-129.834 0 0 41.258-13.184 134.912 50.346a469.803 469.803 0 0 1 122.88-16.554c41.642.213 83.626 5.632 122.88 16.554 93.653-63.488 134.784-50.346 134.784-50.346 26.752 67.541 9.898 117.504 4.864 129.834 31.402 34.347 50.474 78.123 50.474 131.67 0 188.586-114.73 230.016-224.042 242.09 17.578 15.232 33.578 44.672 33.578 90.454v135.85c0 13.142 7.936 27.606 32.854 22.87C862.25 912.597 1002.667 728.747 1002.667 512c0-271.019-219.648-490.667-490.71-490.667z"></path></svg></a></div><div class="nav-item hide-in-mobile"><button type="button" id="appearance-switch"><svg xmlns="http://www.w3.org/2000/svg" class="icon auto-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="auto icon" style="display:block;"><path d="M512 992C246.92 992 32 777.08 32 512S246.92 32 512 32s480 214.92 480 480-214.92 480-480 480zm0-840c-198.78 0-360 161.22-360 360 0 198.84 161.22 360 360 360s360-161.16 360-360c0-198.78-161.22-360-360-360zm0 660V212c165.72 0 300 134.34 300 300 0 165.72-134.28 300-300 300z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="dark icon" style="display:none;"><path d="M524.8 938.667h-4.267a439.893 439.893 0 0 1-313.173-134.4 446.293 446.293 0 0 1-11.093-597.334A432.213 432.213 0 0 1 366.933 90.027a42.667 42.667 0 0 1 45.227 9.386 42.667 42.667 0 0 1 10.24 42.667 358.4 358.4 0 0 0 82.773 375.893 361.387 361.387 0 0 0 376.747 82.774 42.667 42.667 0 0 1 54.187 55.04 433.493 433.493 0 0 1-99.84 154.88 438.613 438.613 0 0 1-311.467 128z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="light icon" style="display:none;"><path d="M952 552h-80a40 40 0 0 1 0-80h80a40 40 0 0 1 0 80zM801.88 280.08a41 41 0 0 1-57.96-57.96l57.96-58a41.04 41.04 0 0 1 58 58l-58 57.96zM512 752a240 240 0 1 1 0-480 240 240 0 0 1 0 480zm0-560a40 40 0 0 1-40-40V72a40 40 0 0 1 80 0v80a40 40 0 0 1-40 40zm-289.88 88.08-58-57.96a41.04 41.04 0 0 1 58-58l57.96 58a41 41 0 0 1-57.96 57.96zM192 512a40 40 0 0 1-40 40H72a40 40 0 0 1 0-80h80a40 40 0 0 1 40 40zm30.12 231.92a41 41 0 0 1 57.96 57.96l-57.96 58a41.04 41.04 0 0 1-58-58l58-57.96zM512 832a40 40 0 0 1 40 40v80a40 40 0 0 1-80 0v-80a40 40 0 0 1 40-40zm289.88-88.08 58 57.96a41.04 41.04 0 0 1-58 58l-57.96-58a41 41 0 0 1 57.96-57.96z"></path></svg></button></div><!----><!--]--><!--[--><!----><!--]--><button type="button" class="vp-toggle-navbar-button" aria-label="Toggle Navbar" aria-expanded="false" aria-controls="nav-screen"><span><span class="vp-top"></span><span class="vp-middle"></span><span class="vp-bottom"></span></span></button></div></header><!----><!--]--><!----><div class="toggle-sidebar-wrapper"><span class="arrow start"></span></div><aside class="sidebar" id="sidebar"><!--[--><!----><!--]--><ul class="sidebar-links"></ul><!--[--><!----><!--]--></aside><!--[--><main class="vp-page" id="main-content"><!--[--><!----><!----><nav class="vp-breadcrumb disable"></nav><div class="vp-page-title"><h1><!---->hive架构教程</h1><div class="page-info"><!----><span class="page-date-info" aria-label="写作日期📅" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon calendar-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="calendar icon"><path d="M716.4 110.137c0-18.753-14.72-33.473-33.472-33.473-18.753 0-33.473 14.72-33.473 33.473v33.473h66.993v-33.473zm-334.87 0c0-18.753-14.72-33.473-33.473-33.473s-33.52 14.72-33.52 33.473v33.473h66.993v-33.473zm468.81 33.52H716.4v100.465c0 18.753-14.72 33.473-33.472 33.473a33.145 33.145 0 01-33.473-33.473V143.657H381.53v100.465c0 18.753-14.72 33.473-33.473 33.473a33.145 33.145 0 01-33.473-33.473V143.657H180.6A134.314 134.314 0 0046.66 277.595v535.756A134.314 134.314 0 00180.6 947.289h669.74a134.36 134.36 0 00133.94-133.938V277.595a134.314 134.314 0 00-133.94-133.938zm33.473 267.877H147.126a33.145 33.145 0 01-33.473-33.473c0-18.752 14.72-33.473 33.473-33.473h736.687c18.752 0 33.472 14.72 33.472 33.473a33.145 33.145 0 01-33.472 33.473z"></path></svg><span><!----></span><meta property="datePublished" content="2023-06-25T06:16:56.000Z"></span><!----><!----><span class="page-reading-time-info" aria-label="阅读时间⌛" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon timer-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="timer icon"><path d="M799.387 122.15c4.402-2.978 7.38-7.897 7.38-13.463v-1.165c0-8.933-7.38-16.312-16.312-16.312H256.33c-8.933 0-16.311 7.38-16.311 16.312v1.165c0 5.825 2.977 10.874 7.637 13.592 4.143 194.44 97.22 354.963 220.201 392.763-122.204 37.542-214.893 196.511-220.2 389.397-4.661 5.049-7.638 11.651-7.638 19.03v5.825h566.49v-5.825c0-7.379-2.849-13.981-7.509-18.9-5.049-193.016-97.867-351.985-220.2-389.527 123.24-37.67 216.446-198.453 220.588-392.892zM531.16 450.445v352.632c117.674 1.553 211.787 40.778 211.787 88.676H304.097c0-48.286 95.149-87.382 213.728-88.676V450.445c-93.077-3.107-167.901-81.297-167.901-177.093 0-8.803 6.99-15.793 15.793-15.793 8.803 0 15.794 6.99 15.794 15.793 0 80.261 63.69 145.635 142.01 145.635s142.011-65.374 142.011-145.635c0-8.803 6.99-15.793 15.794-15.793s15.793 6.99 15.793 15.793c0 95.019-73.789 172.82-165.96 177.093z"></path></svg><span>大约 5 分钟</span><meta property="timeRequired" content="PT5M"></span></div><hr></div><div class="toc-place-holder"><aside id="toc"><!--[--><!----><!--]--><div class="toc-header">此页内容<button type="button" class="print-button" title="打印"><svg xmlns="http://www.w3.org/2000/svg" class="icon print-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="print icon"><path d="M819.2 364.8h-44.8V128c0-17.067-14.933-32-32-32H281.6c-17.067 0-32 14.933-32 32v236.8h-44.8C145.067 364.8 96 413.867 96 473.6v192c0 59.733 49.067 108.8 108.8 108.8h44.8V896c0 17.067 14.933 32 32 32h460.8c17.067 0 32-14.933 32-32V774.4h44.8c59.733 0 108.8-49.067 108.8-108.8v-192c0-59.733-49.067-108.8-108.8-108.8zM313.6 160h396.8v204.8H313.6V160zm396.8 704H313.6V620.8h396.8V864zM864 665.6c0 25.6-19.2 44.8-44.8 44.8h-44.8V588.8c0-17.067-14.933-32-32-32H281.6c-17.067 0-32 14.933-32 32v121.6h-44.8c-25.6 0-44.8-19.2-44.8-44.8v-192c0-25.6 19.2-44.8 44.8-44.8h614.4c25.6 0 44.8 19.2 44.8 44.8v192z"></path></svg></button></div><div class="toc-wrapper"><ul class="toc-list"><!--[--><li class="toc-item"><a aria-current="page" href="/blog/study/hive%20%E6%9E%B6%E6%9E%84%E7%AC%94%E8%AE%B0%E9%9A%8F%E7%AC%94.html#测试hive3-on-spark2" class="router-link-active router-link-exact-active toc-link level3">测试Hive3 on Spark2</a></li><!----><!--]--></ul><div class="toc-marker" style="top:-1.7rem;"></div></div><!--[--><!----><!--]--></aside></div><!----><div class="theme-hope-content"><p>---</p><p>date: 2013-6-25</p><p>category: 大数据</p><p>tag:</p><p>- hive</p><p>---</p><h1 id="hive架构教程" tabindex="-1"><a class="header-anchor" href="#hive架构教程" aria-hidden="true">#</a> hive架构教程</h1><p>hadoop3 mysql5.6 zookeeper 安装</p><p>https://blog.csdn.net/yoshubom/article/details/113845190</p><p>hadoop3.2 安装</p><p>https://blog.csdn.net/m0_37829442/article/details/114004981</p><p>hive3.12 安装</p><div class="language-perl line-numbers-mode" data-ext="perl"><pre class="language-perl"><code>wget https<span class="token punctuation">:</span><span class="token operator">//</span>downloads<span class="token operator">.</span>apache<span class="token operator">.</span>org<span class="token operator">/</span>hive<span class="token operator">/</span>hive<span class="token operator">-</span><span class="token v-string string">3.1.2</span><span class="token operator">/</span>apache<span class="token operator">-</span>hive<span class="token operator">-</span><span class="token v-string string">3.1.2</span><span class="token operator">-</span>bin<span class="token operator">.</span>tar<span class="token operator">.</span>gz
+
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> software<span class="token punctuation">]</span><span class="token comment"># tar -zxvf apache-hive-3.1.2-bin.tar.gz -C /opt/module/</span>
+
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> conf<span class="token punctuation">]</span><span class="token comment"># mv hive-default.xml.template hive-default.xml</span>
+
+vi hive<span class="token operator">-</span>site<span class="token operator">.</span>xml
+
+<span class="token operator">&lt;</span><span class="token operator">?</span>xml version<span class="token operator">=</span><span class="token string">&quot;1.0&quot;</span> encoding<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">?</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">?</span>xml<span class="token operator">-</span>stylesheet type<span class="token operator">=</span><span class="token string">&quot;text/xsl&quot;</span> href<span class="token operator">=</span><span class="token string">&quot;configuration.xsl&quot;</span><span class="token operator">?</span><span class="token operator">&gt;</span>
+<span class="token filehandle symbol">&lt;configuration&gt;</span>
+  <span class="token filehandle symbol">&lt;property&gt;</span>
+    <span class="token filehandle symbol">&lt;name&gt;</span>javax<span class="token operator">.</span>jdo<span class="token operator">.</span>option<span class="token operator">.</span>ConnectionURL<span class="token filehandle symbol">&lt;/name&gt;</span>
+    <span class="token filehandle symbol">&lt;value&gt;</span>jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span><span class="token operator">//</span><span class="token v-string string">192.168.8.185</span><span class="token punctuation">:</span><span class="token number">3306</span><span class="token operator">/</span>hive<span class="token operator">?</span>createDatabaseIfNotExist<span class="token operator">=</span>true<span class="token filehandle symbol">&lt;/value&gt;</span>
+    <span class="token filehandle symbol">&lt;description&gt;</span>JDBC connect string <span class="token keyword">for</span> a JDBC metastore<span class="token filehandle symbol">&lt;/description&gt;</span>
+  <span class="token filehandle symbol">&lt;/property&gt;</span>
+  <span class="token filehandle symbol">&lt;property&gt;</span>
+    <span class="token filehandle symbol">&lt;name&gt;</span>javax<span class="token operator">.</span>jdo<span class="token operator">.</span>option<span class="token operator">.</span>ConnectionDriverName<span class="token filehandle symbol">&lt;/name&gt;</span>
+    <span class="token filehandle symbol">&lt;value&gt;</span>com<span class="token operator">.</span>mysql<span class="token operator">.</span>jdbc<span class="token operator">.</span>Driver<span class="token filehandle symbol">&lt;/value&gt;</span>
+    <span class="token filehandle symbol">&lt;description&gt;</span>Driver class name <span class="token keyword">for</span> a JDBC metastore<span class="token filehandle symbol">&lt;/description&gt;</span>
+  <span class="token filehandle symbol">&lt;/property&gt;</span>
+  <span class="token filehandle symbol">&lt;property&gt;</span>
+    <span class="token filehandle symbol">&lt;name&gt;</span>javax<span class="token operator">.</span>jdo<span class="token operator">.</span>option<span class="token operator">.</span>ConnectionUserName<span class="token filehandle symbol">&lt;/name&gt;</span>
+    <span class="token filehandle symbol">&lt;value&gt;</span>root<span class="token filehandle symbol">&lt;/value&gt;</span>
+    <span class="token filehandle symbol">&lt;description&gt;</span>username to <span class="token keyword">use</span> against metastore database<span class="token filehandle symbol">&lt;/description&gt;</span>
+  <span class="token filehandle symbol">&lt;/property&gt;</span>
+  <span class="token filehandle symbol">&lt;property&gt;</span>
+    <span class="token filehandle symbol">&lt;name&gt;</span>javax<span class="token operator">.</span>jdo<span class="token operator">.</span>option<span class="token operator">.</span>ConnectionPassword<span class="token filehandle symbol">&lt;/name&gt;</span>
+    <span class="token filehandle symbol">&lt;value&gt;</span><span class="token number">123456</span><span class="token filehandle symbol">&lt;/value&gt;</span>
+    <span class="token filehandle symbol">&lt;description&gt;</span>password to <span class="token keyword">use</span> against metastore database<span class="token filehandle symbol">&lt;/description&gt;</span>
+  <span class="token filehandle symbol">&lt;/property&gt;</span>
+  
+  
+<span class="token filehandle symbol">&lt;/configuration&gt;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-perl line-numbers-mode" data-ext="perl"><pre class="language-perl"><code>复制mysql驱动到hive3<span class="token number">.1</span><span class="token operator">/</span>lib
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> lib<span class="token punctuation">]</span><span class="token comment"># cp  mysql-connector-java-5.1.37-bin.jar  /opt/module/hive3.1/lib/</span>
+
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> bin<span class="token punctuation">]</span><span class="token comment"># cd /opt/module/hive3.1/bin</span>
+schematool <span class="token operator">-</span>dbType mysql <span class="token operator">-</span>initSchema
+会报错<span class="token punctuation">:</span>
+
+解决<span class="token punctuation">:</span>
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> lib<span class="token punctuation">]</span><span class="token comment"># cp guava-27.0-jre.jar /opt/module/hive3.1/lib/ </span>
+                     cd  <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hive3<span class="token number">.1</span><span class="token regex">/lib/</span>
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> lib<span class="token punctuation">]</span><span class="token comment"># rm -rf guava-19.0.jar </span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>hive 架构笔记随笔</p><p>hive分区表</p><div class="language-perl line-numbers-mode" data-ext="perl"><pre class="language-perl"><code>hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> create table dept<span class="token punctuation">(</span>no int<span class="token punctuation">,</span>name string<span class="token punctuation">,</span>loc string<span class="token punctuation">)</span>partitioned by<span class="token punctuation">(</span>day string<span class="token punctuation">)</span> row format delimited fields terminated by <span class="token string">&#39;\t&#39;</span><span class="token punctuation">;</span>
+
+样本数据
+vi dept<span class="token operator">.</span>log  <span class="token punctuation">(</span>tab键分开<span class="token punctuation">)</span>
+<span class="token number">1</span>       zhangangsan     <span class="token number">3</span>
+<span class="token number">2</span>       muliu   <span class="token number">4</span>
+<span class="token number">3</span>       hei     <span class="token number">5</span>
+
+
+导入数据
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> load data <span class="token keyword">local</span> inpath <span class="token string">&#39;/opt/module/hive-2.3.0/dept.log&#39;</span> into table dept partition<span class="token punctuation">(</span>day<span class="token operator">=</span><span class="token string">&#39;20220501&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+删除一个分区的数据
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> alter table dept drop partition<span class="token punctuation">(</span>day<span class="token operator">=</span><span class="token string">&#39;20220501&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+添加分区
+
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> alter table dept add partition<span class="token punctuation">(</span>day<span class="token operator">=</span><span class="token string">&#39;20220502&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+分区查询
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> select <span class="token operator">*</span> from dept where day<span class="token operator">=</span><span class="token string">&#39;20220501&#39;</span><span class="token punctuation">;</span>
+
+多分区联合查询
+
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> select <span class="token operator">*</span> from dept where day<span class="token operator">=</span><span class="token string">&#39;20220501&#39;</span> union select <span class="token operator">*</span> from dept where day<span class="token operator">=</span><span class="token string">&#39;20220502&#39;</span><span class="token punctuation">;</span>
+
+查看有多少分区
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> show partitions dept<span class="token punctuation">;</span>
+
+
+查看分区结构
+
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> desc formatted dept<span class="token punctuation">;</span>
+
+
+
+在分区的基础上创建分桶表
+分区针对的是数据的存储路径；分桶针对的是数据文件。
+
+分桶规则：
+根据结果可知：Hive的分桶采用对分桶字段的值进行哈希，然后除以桶的个数求余的方式决定该条记录存放在哪个桶当中
+
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span>  create table deptc<span class="token punctuation">(</span>no int<span class="token punctuation">,</span>name string<span class="token punctuation">,</span>loc string<span class="token punctuation">)</span>partitioned by<span class="token punctuation">(</span>day string<span class="token punctuation">)</span> clustered by<span class="token punctuation">(</span>name<span class="token punctuation">)</span> into <span class="token number">2</span> buckets row format delimited fields terminated by <span class="token string">&#39;\t&#39;</span><span class="token punctuation">;</span>
+
+查看分桶表结构
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> desc formatted deptc<span class="token punctuation">;</span>
+
+向分桶表中导入数据
+注意<span class="token punctuation">:</span>
+Hive默认不支持通过load命令导入数据到分桶表<span class="token operator">.</span>
+<span class="token number">1</span><span class="token operator">.</span>创建和分桶表结构相同的普通表
+<span class="token number">2</span><span class="token operator">.</span>给普通表加载数据
+<span class="token number">3</span> 使用 insert into select 导入数据
+
+操作<span class="token punctuation">:</span>
+<span class="token number">1</span><span class="token operator">.</span>创建临时表
+create table dept_temp<span class="token punctuation">(</span>no int<span class="token punctuation">,</span>name string<span class="token punctuation">,</span>loc string<span class="token punctuation">)</span> row format delimited fields terminated by <span class="token string">&#39;\t&#39;</span><span class="token punctuation">;</span>
+<span class="token number">2</span><span class="token operator">.</span>向临时表导入数据
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> load data <span class="token keyword">local</span> inpath <span class="token string">&#39;/opt/module/hive-2.3.0/dept.log&#39;</span> into table dept_temp<span class="token punctuation">;</span>
+<span class="token number">3</span><span class="token operator">.</span> 将临时表数据插入到分桶表
+
+hive <span class="token punctuation">(</span>db_hive<span class="token punctuation">)</span><span class="token operator">&gt;</span> insert into table deptc partition<span class="token punctuation">(</span>day<span class="token operator">=</span><span class="token string">&#39;20220501&#39;</span><span class="token punctuation">)</span> select <span class="token operator">*</span> from dept_temp<span class="token punctuation">;</span>
+
+
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>分桶示意图:</p><p>![image-20220501120017979](/Users/li/Library/Application Support/typora-user-images/image-20220501120017979.png)</p><p>![image-20220501120222311](/Users/li/Library/Application Support/typora-user-images/image-20220501120222311.png)</p><p>参考:</p><p>https://blog.csdn.net/yoshubom/article/details/113845190</p><p>spark on hive 配置</p><p>需要的版本如下:</p><p>spark 版本:spark 2.4.7</p><p>hive 版本: hive3.1.2</p><p>hadoop版本:hadoop3.2.2</p><p>scala 版本:scala2.12.10</p><div class="language-perl line-numbers-mode" data-ext="perl"><pre class="language-perl"><code><span class="token comment">#下载 </span>
+
+<span class="token comment">#spark 官网</span>
+http<span class="token punctuation">:</span><span class="token operator">//</span>spark<span class="token operator">.</span>apache<span class="token operator">.</span>org<span class="token operator">/</span>downloads<span class="token operator">.</span>html
+
+
+安装scala <span class="token number">2.12</span>
+
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> software<span class="token punctuation">]</span><span class="token comment"># rpm -ivh scala-2.12.10.rpm </span>
+准备中<span class="token operator">...</span>                          <span class="token comment">################################# [100%]</span>
+正在升级<span class="token operator">/</span>安装<span class="token operator">...</span>
+   <span class="token number">1</span><span class="token punctuation">:</span>scala<span class="token operator">-</span><span class="token v-string string">2.12.10</span><span class="token operator">-</span><span class="token number">1</span>                  <span class="token comment">################################# [100%]</span>
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> software<span class="token punctuation">]</span><span class="token comment"># which scala</span>
+<span class="token operator">/</span>usr<span class="token regex">/bin/scala</span>
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> software<span class="token punctuation">]</span><span class="token comment"># scala version</span>
+No such file <span class="token operator">or</span> class on classpath<span class="token punctuation">:</span> version
+<span class="token punctuation">[</span>root<span class="token variable">@centos01</span> software<span class="token punctuation">]</span><span class="token comment"># scala -version</span>
+Scala code runner version <span class="token v-string string">2.12.10</span> 
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-perl line-numbers-mode" data-ext="perl"><pre class="language-perl"><code>vim <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hive3<span class="token number">.1</span><span class="token operator">/</span>conf<span class="token operator">/</span>spark<span class="token operator">-</span>defaults<span class="token operator">.</span>conf
+
+spark<span class="token operator">.</span>master                             yarn
+spark<span class="token operator">.</span>eventLog<span class="token operator">.</span>enabled                   true
+spark<span class="token operator">.</span>eventLog<span class="token operator">.</span>dir                       hdfs<span class="token punctuation">:</span><span class="token operator">//</span>centos01<span class="token punctuation">:</span><span class="token number">9000</span><span class="token operator">/</span>spark<span class="token operator">-</span>history
+spark<span class="token operator">.</span>executor<span class="token operator">.</span>memory                    1g
+spark<span class="token operator">.</span>driver<span class="token operator">.</span>memory                      1g
+
+在HDFS创建如下路径，用于存储历史日志
+hadoop fs <span class="token operator">-</span>mkdir <span class="token operator">/</span>spark<span class="token operator">-</span>history
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>修改vim /opt/module/hive3.1/conf/hive-site.xml</p><div class="language-perl line-numbers-mode" data-ext="perl"><pre class="language-perl"><code><span class="token operator">&lt;</span><span class="token operator">?</span>xml version<span class="token operator">=</span><span class="token string">&quot;1.0&quot;</span> encoding<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">?</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">?</span>xml<span class="token operator">-</span>stylesheet type<span class="token operator">=</span><span class="token string">&quot;text/xsl&quot;</span> href<span class="token operator">=</span><span class="token string">&quot;configuration.xsl&quot;</span><span class="token operator">?</span><span class="token operator">&gt;</span>
+<span class="token filehandle symbol">&lt;configuration&gt;</span>
+    <span class="token filehandle symbol">&lt;property&gt;</span>
+        <span class="token filehandle symbol">&lt;name&gt;</span>javax<span class="token operator">.</span>jdo<span class="token operator">.</span>option<span class="token operator">.</span>ConnectionURL<span class="token filehandle symbol">&lt;/name&gt;</span>
+        <span class="token filehandle symbol">&lt;value&gt;</span>jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span><span class="token operator">//</span><span class="token v-string string">192.168.8.185</span><span class="token punctuation">:</span><span class="token number">3306</span><span class="token operator">/</span>hive<span class="token operator">?</span>createDatabaseIfNotExist<span class="token operator">=</span>true<span class="token filehandle symbol">&lt;/value&gt;</span>
+        <span class="token filehandle symbol">&lt;description&gt;</span>JDBC connect string <span class="token keyword">for</span> a JDBC metastore<span class="token filehandle symbol">&lt;/description&gt;</span>
+    <span class="token filehandle symbol">&lt;/property&gt;</span>
+    <span class="token filehandle symbol">&lt;property&gt;</span>
+        <span class="token filehandle symbol">&lt;name&gt;</span>javax<span class="token operator">.</span>jdo<span class="token operator">.</span>option<span class="token operator">.</span>ConnectionDriverName<span class="token filehandle symbol">&lt;/name&gt;</span>
+        <span class="token filehandle symbol">&lt;value&gt;</span>com<span class="token operator">.</span>mysql<span class="token operator">.</span>jdbc<span class="token operator">.</span>Driver<span class="token filehandle symbol">&lt;/value&gt;</span>
+        <span class="token filehandle symbol">&lt;description&gt;</span>Driver class name <span class="token keyword">for</span> a JDBC metastore<span class="token filehandle symbol">&lt;/description&gt;</span>
+    <span class="token filehandle symbol">&lt;/property&gt;</span>
+    <span class="token filehandle symbol">&lt;property&gt;</span>
+        <span class="token filehandle symbol">&lt;name&gt;</span>javax<span class="token operator">.</span>jdo<span class="token operator">.</span>option<span class="token operator">.</span>ConnectionUserName<span class="token filehandle symbol">&lt;/name&gt;</span>
+        <span class="token filehandle symbol">&lt;value&gt;</span>root<span class="token filehandle symbol">&lt;/value&gt;</span>
+        <span class="token filehandle symbol">&lt;description&gt;</span>username to <span class="token keyword">use</span> against metastore database<span class="token filehandle symbol">&lt;/description&gt;</span>
+    <span class="token filehandle symbol">&lt;/property&gt;</span>
+    <span class="token filehandle symbol">&lt;property&gt;</span>
+        <span class="token filehandle symbol">&lt;name&gt;</span>javax<span class="token operator">.</span>jdo<span class="token operator">.</span>option<span class="token operator">.</span>ConnectionPassword<span class="token filehandle symbol">&lt;/name&gt;</span>
+        <span class="token filehandle symbol">&lt;value&gt;</span><span class="token number">123456</span><span class="token filehandle symbol">&lt;/value&gt;</span>
+        <span class="token filehandle symbol">&lt;description&gt;</span>password to <span class="token keyword">use</span> against metastore database<span class="token filehandle symbol">&lt;/description&gt;</span>
+    <span class="token filehandle symbol">&lt;/property&gt;</span>
+    <span class="token filehandle symbol">&lt;property&gt;</span>
+        <span class="token filehandle symbol">&lt;name&gt;</span>hive<span class="token operator">.</span>execution<span class="token operator">.</span>engine<span class="token filehandle symbol">&lt;/name&gt;</span>
+        <span class="token filehandle symbol">&lt;value&gt;</span>spark<span class="token filehandle symbol">&lt;/value&gt;</span>
+    <span class="token filehandle symbol">&lt;/property&gt;</span>
+    <span class="token filehandle symbol">&lt;property&gt;</span>
+        <span class="token filehandle symbol">&lt;name&gt;</span>spark<span class="token operator">.</span>yarn<span class="token operator">.</span>jars<span class="token filehandle symbol">&lt;/name&gt;</span>
+        <span class="token filehandle symbol">&lt;value&gt;</span>hdfs<span class="token punctuation">:</span><span class="token operator">//</span>centos01<span class="token punctuation">:</span><span class="token number">9000</span><span class="token regex">/spark-jars/</span><span class="token operator">*</span><span class="token filehandle symbol">&lt;/value&gt;</span>
+    <span class="token filehandle symbol">&lt;/property&gt;</span>
+    <span class="token filehandle symbol">&lt;property&gt;</span>
+        <span class="token filehandle symbol">&lt;name&gt;</span>hive<span class="token operator">.</span>spark<span class="token operator">.</span>client<span class="token operator">.</span>connect<span class="token operator">.</span>timeout<span class="token filehandle symbol">&lt;/name&gt;</span>
+        <span class="token filehandle symbol">&lt;value&gt;</span>10000ms<span class="token filehandle symbol">&lt;/value&gt;</span>
+    <span class="token filehandle symbol">&lt;/property&gt;</span>
+<span class="token filehandle symbol">&lt;/configuration&gt;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-perl line-numbers-mode" data-ext="perl"><pre class="language-perl"><code><span class="token comment">#下载spark2.4.7 纯净版</span>
+wget https<span class="token punctuation">:</span><span class="token operator">//</span>archive<span class="token operator">.</span>apache<span class="token operator">.</span>org<span class="token operator">/</span>dist<span class="token operator">/</span>spark<span class="token operator">/</span>spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">/</span>spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>bin<span class="token operator">-</span>without<span class="token operator">-</span>hadoop<span class="token operator">.</span>tgz
+tar <span class="token operator">-</span>zxvf spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>bin<span class="token operator">-</span>without<span class="token operator">-</span>hadoop<span class="token operator">.</span>tgz <span class="token operator">-C</span> <span class="token regex">/opt/modu</span><span class="token operator">le</span>
+mv spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>bin<span class="token operator">-</span>without<span class="token operator">-</span>hadoop spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>pure
+
+
+<span class="token comment">#配置spark-env.sh</span>
+
+cat <span class="token operator">&gt;</span> <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>pure<span class="token operator">/</span>conf<span class="token operator">/</span>spark<span class="token operator">-</span>env<span class="token operator">.</span>sh <span class="token operator">&lt;&lt;</span> <span class="token string">&#39;EOF&#39;</span>
+export HADOOP_HOME<span class="token operator">=</span><span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hadoop<span class="token operator">-</span><span class="token v-string string">3.2.2</span>
+export SPARK_DIST_CLASSPATH<span class="token operator">=</span><span class="token variable">$(</span><span class="token variable">$</span><span class="token punctuation">{</span>HADOOP_HOME<span class="token punctuation">}</span><span class="token operator">/</span>bin<span class="token operator">/</span>hdfs classpath<span class="token punctuation">)</span>
+export YARN_CONF_DIR<span class="token operator">=</span><span class="token variable">$</span><span class="token punctuation">{</span>HADOOP_HOME<span class="token punctuation">}</span><span class="token operator">/</span>etc<span class="token operator">/</span>hadoop
+EOF
+
+
+
+测试spark<span class="token v-string string">2.4.7</span>
+
+cd <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>pure <span class="token operator">&amp;&amp;</span><span class="token operator">\</span>
+  bin<span class="token operator">/</span>run<span class="token operator">-</span>example SparkPi <span class="token number">2</span><span class="token operator">&gt;</span><span class="token variable">&amp;1</span> <span class="token operator">|</span> grep <span class="token string">&quot;Pi is&quot;</span>
+  
+配置Hive3 on Spark2
+
+
+cat <span class="token operator">&gt;</span> <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hive3<span class="token number">.1</span><span class="token operator">/</span>conf<span class="token operator">/</span>hive<span class="token operator">-</span>env<span class="token operator">.</span>sh <span class="token operator">&lt;&lt;</span> <span class="token string">&#39;EOF&#39;</span>
+export HADOOP_HOME<span class="token operator">=</span><span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hadoop<span class="token operator">-</span><span class="token v-string string">3.2.2</span>
+<span class="token comment"># 新增SPARK_HOME 必须是without-hadoop 的纯净版</span>
+export SPARK_HOME<span class="token operator">=</span><span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>pure
+EOF
+
+
+去除冲突的jar
+<span class="token comment"># 1. 去除冲突jar 文件</span>
+cd <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>pure<span class="token operator">/</span>jars <span class="token operator">&amp;&amp;</span><span class="token operator">\</span>
+  mv orc<span class="token operator">-</span>core<span class="token operator">-</span><span class="token v-string string">1.5.5</span><span class="token operator">-</span>nohive<span class="token operator">.</span>jar orc<span class="token operator">-</span>core<span class="token operator">-</span><span class="token v-string string">1.5.5</span><span class="token operator">-</span>nohive<span class="token operator">.</span>jar<span class="token operator">.</span>bak
+
+<span class="token comment"># 2. 上传spark2 纯净版依赖库到HDFS</span>
+cd <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hadoop<span class="token operator">-</span><span class="token v-string string">3.2.2</span> <span class="token operator">&amp;&amp;</span><span class="token operator">\</span>
+  bin<span class="token operator">/</span>hdfs dfs <span class="token operator">-</span>rm <span class="token operator">-r</span> <span class="token operator">-f</span> <span class="token operator">/</span>spark<span class="token operator">-</span>jars <span class="token punctuation">;</span> bin<span class="token operator">/</span>hdfs dfs <span class="token operator">-</span>mkdir <span class="token operator">/</span>spark<span class="token operator">-</span>jars <span class="token operator">&amp;&amp;</span><span class="token operator">\</span>
+  bin<span class="token operator">/</span>hdfs dfs <span class="token operator">-</span>put <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>pure<span class="token regex">/jars/</span><span class="token operator">*</span> <span class="token operator">/</span>spark<span class="token operator">-</span>jars <span class="token operator">&amp;&amp;</span><span class="token operator">\</span>
+  bin<span class="token operator">/</span>hdfs dfs <span class="token operator">-</span>ls <span class="token operator">/</span>spark<span class="token operator">-</span>jars
+<span class="token comment">## Hive 任务由Spark 执行，Spark 资源分配由Yarn 调度，该任务可能分配到任一个节点</span>
+<span class="token comment">## 所以需要将Spark 的依赖上传到HDFS 集群路径，这样集群中任何一个节点都能获取到</span>
+
+<span class="token comment"># 3. 复制Spark2 连接依赖库到Hive3</span>
+cd <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>spark<span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">-</span>pure<span class="token operator">/</span>jars <span class="token operator">&amp;&amp;</span> cp <span class="token operator">\</span>
+  scala<span class="token operator">-</span>compiler<span class="token operator">-</span><span class="token v-string string">2.11.12</span><span class="token operator">.</span>jar scala<span class="token operator">-</span>library<span class="token operator">-</span><span class="token v-string string">2.11.12</span><span class="token operator">.</span>jar scala<span class="token operator">-</span>reflect<span class="token operator">-</span><span class="token v-string string">2.11.12</span><span class="token operator">.</span>jar <span class="token operator">\</span>
+  spark<span class="token operator">-</span>core_2<span class="token number">.11</span><span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">.</span>jar spark<span class="token operator">-</span>network<span class="token operator">-</span>common_2<span class="token number">.11</span><span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">.</span>jar <span class="token operator">\</span>
+  spark<span class="token operator">-</span>unsafe_2<span class="token number">.11</span><span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">.</span>jar spark<span class="token operator">-</span>yarn_2<span class="token number">.11</span><span class="token operator">-</span><span class="token v-string string">2.4.7</span><span class="token operator">.</span>jar <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hive3<span class="token number">.1</span><span class="token regex">/lib/</span>
+
+
+<span class="token comment"># 4. 上传Hive 的orc-core 依赖库</span>
+<span class="token comment">## Spark2 纯净版自带的orc-core-1.5.5-nohive.jar 会造成错误异常</span>
+<span class="token comment">## Job failed with java.lang.NoSuchMethodError: org.apache.orc.TypeDescription.createRowBatch</span>
+<span class="token comment">## 必须将其从HDFS 上/spark2-jars 里删除，因为Hive on Spark 的依赖库来源于HDFS，保险做法就是重命名</span>
+cd <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hadoop<span class="token operator">-</span><span class="token v-string string">3.2.2</span> <span class="token operator">&amp;&amp;</span> bin<span class="token operator">/</span>hdfs dfs <span class="token operator">-</span>mv <span class="token operator">\</span>
+  <span class="token operator">/</span>spark<span class="token operator">-</span>jars<span class="token operator">/</span>orc<span class="token operator">-</span>core<span class="token operator">-</span><span class="token v-string string">1.5.5</span><span class="token operator">-</span>nohive<span class="token operator">.</span>jar <span class="token operator">\</span>
+  <span class="token operator">/</span>spark<span class="token operator">-</span>jars<span class="token operator">/</span>orc<span class="token operator">-</span>core<span class="token operator">-</span><span class="token v-string string">1.5.5</span><span class="token operator">-</span>nohive<span class="token operator">.</span>jar<span class="token operator">.</span>bak
+<span class="token comment">## 另外还需将Hive 里的orc-core 上传至HDFS 才可以让Spark2 支持ORC 存储格式，详见下一节的测试</span>
+cd <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hadoop<span class="token operator">-</span><span class="token v-string string">3.2.2</span> <span class="token operator">&amp;&amp;</span><span class="token operator">\</span>
+  bin<span class="token operator">/</span>hdfs dfs <span class="token operator">-</span>put <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hive3<span class="token number">.1</span><span class="token operator">/</span>lib<span class="token operator">/</span>orc<span class="token operator">-</span>core<span class="token operator">-</span><span class="token v-string string">1.5.6</span><span class="token operator">.</span>jar <span class="token operator">/</span>spark<span class="token operator">-</span>jars
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="测试hive3-on-spark2" tabindex="-1"><a class="header-anchor" href="#测试hive3-on-spark2" aria-hidden="true">#</a> 测试Hive3 on Spark2</h3><div class="language-perl line-numbers-mode" data-ext="perl"><pre class="language-perl"><code>
+<span class="token operator">--</span> <span class="token number">1</span><span class="token operator">.</span> 先启动MetaStore 和HiveServer2 服务，详见Hive3 启停操作或Hive3 服务脚本
+<span class="token operator">--</span> 如果hive<span class="token operator">-</span>site<span class="token operator">.</span>xml 中没有配置hive<span class="token operator">.</span>metastore<span class="token operator">.</span>uris 则可跳过本步骤
+
+<span class="token operator">--</span> <span class="token number">2</span><span class="token operator">.</span> 启动Hive3
+cd <span class="token regex">/opt/modu</span><span class="token operator">le</span><span class="token operator">/</span>hive3<span class="token number">.1</span> <span class="token operator">&amp;&amp;</span> bin<span class="token operator">/</span>hive
+
+<span class="token operator">--</span> 清屏小技巧 
+<span class="token operator">!</span>clear<span class="token punctuation">;</span>
+
+<span class="token operator">--</span> <span class="token number">2.1</span> 查看Hive 引擎
+set hive<span class="token operator">.</span>execution<span class="token operator">.</span>engine<span class="token punctuation">;</span>
+<span class="token operator">--</span> 结果显示如下，原默认是mr
+<span class="token operator">--</span> hive<span class="token operator">.</span>execution<span class="token operator">.</span>engine<span class="token operator">=</span>spark
+
+<span class="token operator">--</span> <span class="token number">2.2</span> 创建测试表
+drop table <span class="token keyword">if</span> exists student<span class="token punctuation">;</span>
+create table student <span class="token punctuation">(</span>id int<span class="token punctuation">,</span> name string<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">--</span> 测试Spark 的ORC 支持
+drop table <span class="token keyword">if</span> exists student_orc<span class="token punctuation">;</span>
+create table student_orc <span class="token punctuation">(</span>id int<span class="token punctuation">,</span> name string<span class="token punctuation">)</span> stored as orc<span class="token punctuation">;</span>
+
+<span class="token operator">--</span> <span class="token number">2.3</span> 插入数据
+<span class="token operator">--</span> 此时会触发Spark 计算引擎，但只有Map 用于写入磁盘，没有Reduce
+insert into student values <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;zhangsan&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">--</span> 此时访问YARN，http<span class="token punctuation">:</span><span class="token operator">//</span>hadoop113<span class="token punctuation">:</span><span class="token number">8088</span>，可看到名为Hive on Spark 的任务
+<span class="token operator">--</span> 点击其Tracking UI 属性的ApplicationMaster 超链接可进入Spark Web 页面
+<span class="token operator">--</span> 在Environment 标签下可找到以下属性，表示Spark 已运行在cluster 模式下
+<span class="token operator">--</span> spark<span class="token operator">.</span>master               yarn
+<span class="token operator">--</span> spark<span class="token operator">.</span>submit<span class="token operator">.</span>deployMode    cluster
+
+<span class="token operator">--</span> <span class="token number">2.4</span> 如果没有报错并显示结果数据就表示成功了
+select <span class="token operator">*</span> from student<span class="token punctuation">;</span>
+<span class="token operator">--</span> 结果显示
+<span class="token operator">--</span> student<span class="token operator">.</span>id	student<span class="token operator">.</span>name
+<span class="token operator">--</span> <span class="token number">1</span>        	zhangsan
+<span class="token operator">--</span> 需要计算的查询也会触发计算引擎
+select count<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> from student where id<span class="token operator">&gt;</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token operator">--</span> <span class="token number">2.5</span> 测试Spark 存储ORC 数据
+insert into table student_orc select <span class="token operator">*</span> from student<span class="token punctuation">;</span> 
+select <span class="token operator">*</span> from student_orc<span class="token punctuation">;</span>
+select count<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> from student_orc<span class="token punctuation">;</span>
+
+<span class="token operator">--</span> <span class="token number">2.6</span> 清理数据
+drop table student<span class="token punctuation">;</span>
+drop table student_orc<span class="token punctuation">;</span>
+
+<span class="token operator">--</span> <span class="token number">2.7</span> 退出hive
+quit<span class="token punctuation">;</span>
+
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><footer class="page-meta"><div class="meta-item edit-link"><a href="https://github.com/lyl468lyl/blog/edit/main/docs/study/hive 架构笔记随笔.md" rel="noopener noreferrer" target="_blank" aria-label="编辑此页" class="nav-link label"><!--[--><svg xmlns="http://www.w3.org/2000/svg" class="icon edit-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="edit icon"><path d="M430.818 653.65a60.46 60.46 0 0 1-50.96-93.281l71.69-114.012 7.773-10.365L816.038 80.138A60.46 60.46 0 0 1 859.225 62a60.46 60.46 0 0 1 43.186 18.138l43.186 43.186a60.46 60.46 0 0 1 0 86.373L588.879 565.55l-8.637 8.637-117.466 68.234a60.46 60.46 0 0 1-31.958 11.229z"></path><path d="M728.802 962H252.891A190.883 190.883 0 0 1 62.008 771.98V296.934a190.883 190.883 0 0 1 190.883-192.61h267.754a60.46 60.46 0 0 1 0 120.92H252.891a69.962 69.962 0 0 0-69.098 69.099V771.98a69.962 69.962 0 0 0 69.098 69.098h475.911A69.962 69.962 0 0 0 797.9 771.98V503.363a60.46 60.46 0 1 1 120.922 0V771.98A190.883 190.883 0 0 1 728.802 962z"></path></svg><!--]-->编辑此页<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!----></a></div><div class="meta-item git-info"><div class="update-time"><span class="label">上次编辑于: </span><!----></div><div class="contributors"><span class="label">贡献者: </span><!--[--><!--[--><span class="contributor" title="email: 39978670+lyl468lyl@users.noreply.github.com">lyl468lyl</span><!--]--><!--]--></div></div></footer><!----><div class="giscus-wrapper input-top" id="comment" style="display:none;"><div class="loading-icon-wrapper" style="display:flex;align-items:center;justify-content:center;height:96px"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" preserveAspectRatio="xMidYMid" viewBox="25 25 50 50"><animateTransform attributeName="transform" type="rotate" dur="2s" keyTimes="0;1" repeatCount="indefinite" values="0;360"></animateTransform><circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><animate attributeName="stroke-dasharray" dur="1.5s" keyTimes="0;0.5;1" repeatCount="indefinite" values="1,200;90,200;1,200"></animate><animate attributeName="stroke-dashoffset" dur="1.5s" keyTimes="0;0.5;1" repeatCount="indefinite" values="0;-35px;-125px"></animate></circle></svg></div></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper"><div class="vp-footer">我是个神人</div><div class="vp-copyright">Copyright © 2023 龙哥</div></footer></div><!--]--><!----><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app-7d162ccd.js" defer></script>
+  </body>
+</html>
