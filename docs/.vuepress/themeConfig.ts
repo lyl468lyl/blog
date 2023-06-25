@@ -8,15 +8,15 @@ export default hopeTheme({
   hostname: 'https://caigouzi1.github.io/blog/',
 
   author: {
-    name: '爵爵爵',
-    url: 'https://github.com/caigouzi1',
+    name: '龙哥',
+    url: 'https://github.com/lyl468lyl',
   },
 
   iconPrefix: 'iconfont icon-',
 
   logo: '/avatar.png',
 
-  repo: 'https://github.com/caigouzi1/blog',
+  repo: 'https://github.com/lyl468lyl/blog',
 
   docsBranch: 'master',
 
@@ -27,14 +27,14 @@ export default hopeTheme({
   sidebar: false,
   // sidebar: sidebar,
   blog: {
-    description: '一个前端开发者',
+    description: '龙哥的博客',
     // intro: '/intro.html',
     medias: {
-      GitHub: 'https://github.com/caigouzi1',
+      GitHub: 'https://github.com/lyl468lyl/blog',
     },
   },
 
-  footer: '船到桥头自然直',
+  footer: '我是个神人',
 
   displayFooter: true,
 
