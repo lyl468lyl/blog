@@ -1,14 +1,9 @@
-\---
-
+---
 date: 2013-6-25
-
 category: linux
-
 tag:
-
-  \- gitlab
-
-\---
+  - gitlab
+---
 
 #                                 ubuntu18.04 安装gitlab
 
