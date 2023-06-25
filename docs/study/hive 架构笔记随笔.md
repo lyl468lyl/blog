@@ -1,19 +1,9 @@
-
-
 ---
-
 date: 2013-6-25
-
 category: 大数据
-
 tag:
-
   - hive
-
 ---
-
-
-
 # hive架构教程
 
 hadoop3 mysql5.6 zookeeper 安装
