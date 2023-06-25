@@ -11,7 +11,7 @@
    aaaa
    ```
 
-    ![image-20230625151601053](/Users/li/gitblog/blog1/blog/docs/study/images/image-20230625151601053.png)
+    
 
 2. sdk安装
 
