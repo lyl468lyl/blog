@@ -5,7 +5,7 @@ tag:
   - erp
 ---
 
-# 添加frappe用户
+# erp_next使用教程
 
 ```per
 su - root
