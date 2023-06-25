@@ -1,6 +1,6 @@
 
 
-\---
+---
 
 date: 2013-6-25
 
@@ -8,9 +8,9 @@ category: linux
 
 tag:
 
-  \- docker
+  - docker
 
-\---
+---
 
 
 

@@ -1,4 +1,4 @@
-\---
+---
 
 date: 2013-6-25
 
@@ -6,9 +6,9 @@ category: 中间件
 
 tag:
 
-  \- kafka
+  - kafka
 
-\---
+---
 
 # kafak随手笔记
 

@@ -1,4 +1,4 @@
-\---
+---
 
 date: 2013-6-25
 
@@ -6,9 +6,9 @@ category: python
 
 tag:
 
-  \- flask
+  - flask
 
-\---
+---
 
 # flask 部署到unbantu教程
 

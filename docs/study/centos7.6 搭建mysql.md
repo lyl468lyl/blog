@@ -1,4 +1,4 @@
-\---
+---
 
 date: 2013-6-25
 
@@ -6,9 +6,9 @@ category: linux
 
 tag:
 
-  \- centos
+  - centos
 
-\---
+---
 
 # centos7.6 搭建mysql
 

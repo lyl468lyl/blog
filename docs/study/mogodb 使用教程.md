@@ -1,4 +1,4 @@
-\---
+---
 
 date: 2013-6-25
 
@@ -6,9 +6,9 @@ category: 数据库
 
 tag:
 
-  \- mongodb
+  - mongodb
 
-\---
+---
 
 # mogodb 使用教程
 

@@ -1,4 +1,4 @@
-\---
+---
 
 date: 2013-6-25
 
@@ -6,9 +6,9 @@ category: 大数据
 
 tag:
 
-  \- spark
+  - spark
 
-\---
+---
 
 # spark随手笔记
 

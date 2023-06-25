@@ -1,4 +1,4 @@
-\---
+---
 
 date: 2013-6-25
 
@@ -6,9 +6,9 @@ category: linux
 
 tag:
 
-  \- 安装mysql
+  - 安装mysql
 
-\---
+---
 
 # ubuntu18.04 安装mysql5.7.30
 

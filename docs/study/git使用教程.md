@@ -1,3 +1,15 @@
+---
+
+date: 2013-6-25
+
+category: 数据仓
+
+tag:
+
+  - gitlab
+
+---
+
 #  gitlab 使用文档                                           
 
 用户名:root/liyulong

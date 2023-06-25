@@ -1,4 +1,4 @@
-\---
+---
 
 date: 2013-6-25
 
@@ -6,9 +6,9 @@ category: Electron
 
 tag:
 
-  \- Electron
+  - Electron
 
-\---
+---
 
 # Electron构建Vue项目
 
