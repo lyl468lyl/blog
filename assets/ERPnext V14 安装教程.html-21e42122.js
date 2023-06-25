@@ -1,4 +1,4 @@
-import{_ as s,o as n,c as a,e}from"./app-603f7d46.js";const p={},t=e(`<h1 id="erp-next使用教程" tabindex="-1"><a class="header-anchor" href="#erp-next使用教程" aria-hidden="true">#</a> erp_next使用教程</h1><div class="language-per line-numbers-mode" data-ext="per"><pre class="language-per"><code>su - root
+import{_ as s,o as n,c as a,e}from"./app-5ed852aa.js";const p={},t=e(`<h1 id="erp-next使用教程" tabindex="-1"><a class="header-anchor" href="#erp-next使用教程" aria-hidden="true">#</a> erp_next使用教程</h1><div class="language-per line-numbers-mode" data-ext="per"><pre class="language-per"><code>su - root
 #添加用户
 adduser frappe
 #将新建的用户添加到sudo组
