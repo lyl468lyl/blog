@@ -1,0 +1,101 @@
+\---
+
+date: 2013-6-25
+
+category: spring-cloud
+
+tag:
+
+  \- sentinel
+
+\---
+
+# sentinel随手笔记
+
+
+
+![image-20220307222655007](/Users/li/Library/Application Support/typora-user-images/image-20220307222655007.png)
+
+![image-20220307223539677](/Users/li/Library/Application Support/typora-user-images/image-20220307223539677.png)
+
+![image-20220307223609686](/Users/li/Library/Application Support/typora-user-images/image-20220307223609686.png)
+
+![image-20220307224825272](/Users/li/Library/Application Support/typora-user-images/image-20220307224825272.png)
+
+![image-20220307225219028](/Users/li/Library/Application Support/typora-user-images/image-20220307225219028.png)
+
+![image-20220308150823115](/Users/li/Library/Application Support/typora-user-images/image-20220308150823115.png)
+
+![image-20220308152153786](/Users/li/Library/Application Support/typora-user-images/image-20220308152153786.png)
+
+![image-20220308152403912](/Users/li/Library/Application Support/typora-user-images/image-20220308152403912.png)
+
+![image-20220308153602517](/Users/li/Library/Application Support/typora-user-images/image-20220308153602517.png) 
+
+![image-20220308154200302](/Users/li/Library/Application Support/typora-user-images/image-20220308154200302.png)
+
+![image-20220308155103674](/Users/li/Library/Application Support/typora-user-images/image-20220308155103674.png)
+
+![image-20220308160528576](/Users/li/Library/Application Support/typora-user-images/image-20220308160528576.png)
+
+服务限流,大量的请求来的时候,丢掉一些请求.
+
+
+
+降级:达到某个阀值将系统关闭一段时间
+
+
+
+
+
+![image-20220308163518705](/Users/li/Library/Application Support/typora-user-images/image-20220308163518705.png)
+
+![image-20220308164450064](/Users/li/Library/Application Support/typora-user-images/image-20220308164450064.png)
+
+![image-20220308165221047](/Users/li/Library/Application Support/typora-user-images/image-20220308165221047.png)
+
+![image-20220308170040242](/Users/li/Library/Application Support/typora-user-images/image-20220308170040242.png)
+
+![image-20220308170612614](/Users/li/Library/Application Support/typora-user-images/image-20220308170612614.png)
+
+![image-20220308170703022](/Users/li/Library/Application Support/typora-user-images/image-20220308170703022.png)
+
+热点key
+
+![image-20220308171505661](/Users/li/Library/Application Support/typora-user-images/image-20220308171505661.png)
+
+![image-20220308171802494](/Users/li/Library/Application Support/typora-user-images/image-20220308171802494.png)
+
+![image-20220308172223482](/Users/li/Library/Application Support/typora-user-images/image-20220308172223482.png)
+
+![image-20220308175214733](/Users/li/Library/Application Support/typora-user-images/image-20220308175214733.png)
+
+![image-20220308180112343](/Users/li/Library/Application Support/typora-user-images/image-20220308180112343.png)
+
+![image-20220308181219253](/Users/li/Library/Application Support/typora-user-images/image-20220308181219253.png)
+
+![image-20220308183037383](/Users/li/Library/Application Support/typora-user-images/image-20220308183037383.png)
+
+![image-20220308185411142](/Users/li/Library/Application Support/typora-user-images/image-20220308185411142.png)
+
+![image-20220308190607244](/Users/li/Library/Application Support/typora-user-images/image-20220308190607244.png)
+
+![image-20220308191429200](/Users/li/Library/Application Support/typora-user-images/image-20220308191429200.png)
+
+![image-20220308201006683](/Users/li/Library/Application Support/typora-user-images/image-20220308201006683.png)
+
+注意:流控规则必须访问一下地址:
+
+http://localhost:8000/testa
+
+![image-20220308211707703](/Users/li/Library/Application Support/typora-user-images/image-20220308211707703.png)
+
+![image-20220308214420475](/Users/li/Library/Application Support/typora-user-images/image-20220308214420475.png)
+
+![image-20220308222100840](/Users/li/Library/Application Support/typora-user-images/image-20220308222100840.png)
+
+![image-20220308222215258](/Users/li/Library/Application Support/typora-user-images/image-20220308222215258.png
+
+![image-20220308222322198](/Users/li/Library/Application Support/typora-user-images/image-20220308222322198.png)
+
+![image-20220308223440048](/Users/li/Library/Application Support/typora-user-images/image-20220308223440048.png)
