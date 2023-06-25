@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-257204d2","path":"/tag/kafka/","title":"kafka 标签","lang":"zh-CN","frontmatter":{"title":"kafka 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"kafka","key":"tag"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null}');export{a as data};

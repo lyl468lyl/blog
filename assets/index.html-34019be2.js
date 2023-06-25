@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-59185195","path":"/tag/influxdb/","title":"influxdb 标签","lang":"zh-CN","frontmatter":{"title":"influxdb 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"influxdb","key":"tag"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null}');export{e as data};

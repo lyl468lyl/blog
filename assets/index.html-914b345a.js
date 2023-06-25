@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-feb0f36e","path":"/category/%E5%A4%A7%E6%95%B0%E6%8D%AE/","title":"大数据 分类","lang":"zh-CN","frontmatter":{"title":"大数据 分类","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"大数据","key":"category"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null}');export{e as data};
