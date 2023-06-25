@@ -1,13 +1,18 @@
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> c5148dba8193fe1c1e78d373a13f718310d27630
 date: 2013-6-25
-
 category: linux
-
 tag:
+<<<<<<< HEAD
 
   - gitlab
 
+=======
+  - gitlab
+>>>>>>> c5148dba8193fe1c1e78d373a13f718310d27630
 ---
 
 #                                 ubuntu18.04 安装gitlab
