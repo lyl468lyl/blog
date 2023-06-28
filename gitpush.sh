@@ -8,9 +8,9 @@ echo;
 echo "Commit the changes to the local repository"
 echo "please enter the commit info...."
 
-set now=%date% %time%
 
-git commit -m %now%
+
+git commit -m "document"
 echo;
  
 echo "Commit the changes to the remote git server"
