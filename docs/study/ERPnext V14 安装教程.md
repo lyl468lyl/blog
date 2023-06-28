@@ -1247,7 +1247,19 @@ frappe.ui.form.on('Article', {
 
    
 
-7. 
+7. js与html互操作
+   ```perl
+    $(frappe.render_template("index")).appendTo(page.body.addClass("no-border1"));
+#添加div到html
+$("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>").appendTo(
+		page.main
+	);
 
-8. 
+#找到html元素,并添加事件
+	page.main.find(".btn1").click(function(){
+		console.log("click")
+	})
+ ```
+
+9. 
 
