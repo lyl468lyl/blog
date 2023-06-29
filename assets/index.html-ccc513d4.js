@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-16d49b6c","path":"/tag/vmvare/","title":"vmvare 标签","lang":"zh-CN","frontmatter":{"title":"vmvare 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"vmvare","key":"tag"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null}');export{e as data};

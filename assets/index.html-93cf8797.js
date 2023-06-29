@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-6720de15","path":"/category/%E8%99%9A%E6%8B%9F%E6%9C%BA/","title":"虚拟机 分类","lang":"zh-CN","frontmatter":{"title":"虚拟机 分类","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"虚拟机","key":"category"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null}');export{e as data};
