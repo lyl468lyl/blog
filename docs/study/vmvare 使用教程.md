@@ -112,9 +112,59 @@ tag:
 
    
 
-   #### 
+   
 
 5. 要启动X11显示服务器
+
+   ```perl
+   #启动X11
+   startx
+   #确保DISPLAY环境变量正确设置。运行以下命令来检查DISPLAY值
+   echo $DISPLAY
+   #正确的输出应该类似于 ":0" 或 "localhost:0"。
+   export DISPLAY=:0
+   #关闭x11
+   ps aux | grep Xorg
+   kill <PID>
+   ```
+   
+
+   
+6. vmvare 硬盘扩展
+
+   ```perl
+   # 查看磁盘空间情况
+   df -h
+   #1.打开终端并以管理员身份运行parted命令
+   sudo parted /dev/sda
+   
+   #2. print 打印分区情况
+   print
+   
+   Number  Start   End     Size    Type      File system  Flags
+    1      1049kB  538MB   537MB   primary   fat32        boot
+    2      539MB   80.0GB  79.5GB  extended
+    5      539MB   80.0GB  79.5GB  logical   ext4
+   #3. 调整分区情况
+   resizepart 2
+   #输入扩展硬盘空间大小:80G
+   resizepart 5
+   #输入扩展硬盘空间大小:80G
+   #输入quit命令退出parted
+   quit 
+   
+   #启动Ubuntu虚拟机，并使用以下命令来调整文件系统大小
+   sudo resize2fs /dev/sda5
+   
+   #df -h命令来验证根分区的大小是否已扩展到80GB。
+   
+   
+   
+   
+   
+   ```
+
+   
 
    ```perl
    #启动X11
@@ -131,5 +181,4 @@ tag:
 
    
 
-   
 
