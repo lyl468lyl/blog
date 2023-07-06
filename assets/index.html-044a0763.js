@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-67b096c8","path":"/category/datahub/","title":"datahub 分类","lang":"zh-CN","frontmatter":{"title":"datahub 分类","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"datahub","key":"category"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null}');export{a as data};
