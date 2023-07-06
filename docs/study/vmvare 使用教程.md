@@ -181,4 +181,29 @@ tag:
 
    
 
+7. 商简虚拟机安装文件位置
 
+   ```perl
+   1. ubutu-gruby 
+      ip地址:192.168.50.150
+      文件位置:/home/data/gruby_new/Ubuntu-gruby
+      用途:gruby
+      启动:在192.168.50.60 宿主机下的root 用户下: startx,这个是在192.168.50.60的root用户下启动的.
+      备份:无
+   2. ubuntu 64-2 
+      ip地址:192.168.50.73
+      文件位置:/home/data/liyulong1
+      用途:datahub
+      启动: 这个是在192.168.50.60的sj用户下启动的.
+      备份:/home/hdata/liyulong1
+   
+      
+   3. 192.168.50.23 
+      IP地址:192.168.50.23
+      文件位置/home/data/liyulong
+      用途: erpnext 个人开发
+      备份:/home/hdata/liyulong
+   
+   ```
+
+   
