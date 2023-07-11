@@ -1,4 +1,5 @@
 ---
+
 date: 2013-6-25
 category: python
 tag:
@@ -1261,7 +1262,122 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
 		})
 	```
 
+8. frappe doctype文档操作 
 
+   ```perl
+   #请求地址:
+   http://192.168.50.23/api/method/library_management.library_management.doctype.article.article.test
+   
+   
+   #1. 文档更新
+   @frappe.whitelist()
+   def test():
+   	doc = frappe.get_doc('Article', 'bf2207a914')
+   	doc.address = 'wang'
+   	doc.save()
+   	frappe.db.commit()
+   #1.1 文档更新
+   
+   @frappe.whitelist()
+   def test():
+   	doc = frappe.get_doc('Article', 'bf2207a914')
+   	doc.db_set("address","成都")
+   	frappe.db.commit()
+   	
+   #1.2 自动提交更新
+   
+   	@frappe.whitelist()
+     def test():
+   	doc = frappe.get_doc('Article', 'bf2207a914')
+   	doc.db_set('address', "xxx", commit=True)
+   	
+   #2. 文档插入
+   
+   doc = frappe.get_doc({
+   		'doctype': 'Article',
+   		'article_name': 'aaa'
+   	})
+   	doc.insert()
+   	frappe.db.commit()
+   
+   #3. 文档插入
+   doc = frappe.new_doc('Article')
+   doc.article_name = 'New Task 2'
+   doc.insert()
+   frappe.db.commit()
+   
+   #4. 文档中类的方法调用
+   #1) Article 类的方法如下
+   import frappe
+   from frappe.model.document import Document
+   
+   class Article(Document):
+   	def on_insert(self):
+   		print("inserting article")
+   
+   #任何接口调用上述方法
+   #http://192.168.50.23/api/method/library_management.library_management.api.test.test
+   @frappe.whitelist()
+   def test():
+   	doc = frappe.get_doc('Article', 'bf2207a914')
+   	doc.run_method('on_insert')
+   	
+   #验证
+   import frappe
+   from frappe.model.document import Document
+   
+   class Article(Document):
+   	def before_save(self):
+   		print(self)
+   		if self.article_name=="aa":
+   			frappe.throw("con not aa")
+   			
+   
+   
+   
+   
+   
+   	
+   ```
+
+9. single type doctype 默认存储的路径
+
+   ```perl
+   The data in Single DocType is stored in tabSingles (doctype, field, value)
+   ```
+
+   
+
+10. js 中直接操作数据库(article.js)
+
+    ```perl
+      frappe.db.get_list('Article').then(doc => {
+                console.log(doc)
+            })
+    
+         frappe.db.get_single_value("System Settings", "otp_issuer_name").then(data => {
+             console.log(data)
+         }
+    
+    ```
+
+    
+
+11. python 接口返回json
+
+    ```perl
+    frappe.response['message'] = "hello"
+    ```
+
+    
+
+12. 
+
+13. 
+
+14. 
+
+    
 
  ```
 

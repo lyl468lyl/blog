@@ -10,7 +10,11 @@ tag:
 
 ---
 
-# data hub 源码修改
+# data hub 功能实现
+
+####  一 . 销售订单将仿真数据自动插入datahub功能
+
+ 源码修改:
 
 1. /opt/module/frappe-bench/erpnext/erpnext/controllers/selling_controller.py
 
@@ -77,7 +81,7 @@ def set_total_in_words(self):
    		self.validate_workflow()
    ```
 
-   
+   客户端开发请求功能:
 
 ```perl
 import json
@@ -112,6 +116,7 @@ if __name__ == '__main__':
         data = {
             "so": "so_test_00",
             "docstatus":1,
+            "owner":"test",
             "title":"{customer_name}",
             "naming_series":"SAL-ORD-.YYYY.-",
             "customer":"200010134",
@@ -145,9 +150,15 @@ if __name__ == '__main__':
 
 
         }
+        # headers = {
+        #     'Authorization': "token b35823535ff6d52:55fa707ca16e4c5"
+        # }
+
         headers = {
-            'Authorization': "token b35823535ff6d52:55fa707ca16e4c5"
+            'Authorization': "token 8175f5133014dab:ed25df6991bae0c"
         }
+
+
 
 
 
@@ -155,34 +166,175 @@ if __name__ == '__main__':
         print(response.json())
         if(response.status_code == 200):
             print("Success")
-            # parentId=response.json()['data']['name']
-            # dataItem = {"item_name": "李玉龙", "item_age": 40, "parent": parentId, "parenttype": "Article",
-            #             "parentfield": "items"}
-            # urlItem = "http://192.168.50.73/api/resource/Sales Order Item"
-            # response = requests.request("POST", urlItem, headers=headers, data=dataItem)
-            # print(response.json())
-
-
-
-
-
-
-
-
-
-
-
-
+            parentId=response.json()['data']['name']
+            print(parentId)
+            dataItem = {
+                "docstatus": 1,
+                "item_code": "4X90S92381",
+                "ensure_delivery_based_on_produced_serial_no":0,
+                "delivery_date":date_obj1,
+                "item_name":"通信电源用阻燃软电缆 ZA-RVV 1×70 0.6/1kV YD B0",
+                "description":"通信电源用阻燃软电缆 ZA-RVV 1×70 0.6/1kV YD B0",
+                "item_group":"Products",
+                "qty":0.016,
+                "stock_uom":"Km",
+                "uom":"Km",
+                "conversion_factor":1,
+                "stock_qty":0.016,
+                "price_list_rate":0,
+                "base_price_list_rate":0,
+                "margin_rate_or_amount":0,
+                "rate_with_margin":0,
+                "discount_percentage":0,
+                "discount_amount":0,
+                "base_rate_with_margin":0,
+                "rate":0,
+                "amount":0,
+                "base_rate":0,
+                "base_amount":0,
+                "stock_uom_rate":0,
+                "is_free_item":0,
+                "grant_commission":1,
+                "valuation_rate":10,
+                "gross_profit":-10,
+                "weight_per_unit":2518.9,
+                "total_weight":40.302,
+                "warehouse":"Stores - S",
+                "bom_no":"BOM-20T2S0CK00",
+                "projected_qty":-55.042,
+                "actual_qty":596,
+                "item_tax_rate":"{}",
+                "transaction_date":date_obj1,
+                "parent":parentId,
+                "parentfield": "items",
+                "parenttype": "Sales Order",
+                "priority":"4476.0000",
+                "priority_type":"60.0000",
+                "ots_sla":"8",
+                "brand_map":"OPTION",
+                "derived_net_revenue":"59.2252",
+                "process_file_num":"1193",
+                "locked":"未锁定",
+            }
+            urlItem = "http://192.168.50.73/api/resource/Sales Order Item"
+            response = requests.request("POST", urlItem, headers=headers, data=dataItem)
+            print(response.json())
 
 ```
 
 
 
-1. 
+#### 二 aps用户功能和datahub用户打通(aps跳转datahub自动登录功能)
 
-2. 
+1. 开发接口接收aps传过来的账号密码:
+
+   http://192.168.50.23/api/method/frappe.www.login.set_username_password?name=xiaoli&password=aaa
+
+   login.py
+
+   ```perl
+   
+   @frappe.whitelist(allow_guest=True)
+   def set_username_password(name, password):
+   	print(name)
+   	print(password)
+   	frappe.cache().set_value("userName", name)
+   	frappe.cache().set_value("password", password)
+   
+   ```
+
+   获取账号密码
+
+   ```perl
+   def get_context(context):
+   	userInfo=frappe.cache().get_value("userName")
+   	password = frappe.cache().get_value("password")
+   	print(userInfo)
+   	print(password)
+   	context["userName"] = userInfo
+   	context["password"] = password
+   ```
 
    
+
+   由于框架使用frappe,使用jinja模版.将账号传入html端
+
+   login.html
+
+   ```perl
+   <div style="display: none" class="user">{{userName}}</div>
+   <div style="display: none" class="password">{{password}}</div>
+   ```
+
+   
+
+   login.js
+
+   js端获取账号
+
+   ```perl
+   $(window).on("hashchange", function () {
+   
+   		var userInfo=$(".user").text();
+		var passwd=$(".password").text();
+   		console.log(userInfo)
+		console.log(passwd)
+   		login.route();
+   	});
+   ```
+   
+   调用账号体系,验证密码
+   
+   ```perl
+   	$(".form-login").on("submit", function (event) {
+   		event.preventDefault();
+   		var args = {};
+   		args.cmd = "login";
+   		args.usr = frappe.utils.xss_sanitise(($("#login_email").val() || "").trim());
+   		args.pwd = $("#login_password").val();
+   		args.device = "desktop";
+   		if (!args.usr || !args.pwd) {
+   			frappe.msgprint('{{ _("Both login and password required") }}');
+			return false;
+   		}
+		login.call(args);
+   		return false;
+   	});
+   ```
+   
+   
+   
+   7.10 修改frappe/frappe/public/js/frappe/views/workspace/workspace.js
+   
+   ```perl
+   this.page.add_inner_button(__("Create Workspace"), () => {
+   			this.initialize_new_page();
+   		});
+   
+   		//加入数据生成
+   				this.page.add_inner_button(__("数据生成"), () => {
+   
+   			$.ajax({
+                   url: "http://192.168.50.229:7500/PC/new_orders",
+                   method: 'get',
+   				success(result, status, xhr) {
+                   console.log(result);
+                }
+               });
+   			
+   			frappe.msgprint(__('数据生成成功'));
+   
+   		});
+   
+   ```
+   
+   
+   
+   
+
+
+
+
 
 
 
