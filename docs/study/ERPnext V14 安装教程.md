@@ -1351,13 +1351,22 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
 10. js 中直接操作数据库(article.js)
 
     ```perl
-      frappe.db.get_list('Article').then(doc => {
+         #1.查询article文档,只返回name(id)字段的值
+         frappe.db.get_list('Article').then(doc => {
                 console.log(doc)
             })
     
+         #获取tabSingles表中System Settings的value值
          frappe.db.get_single_value("System Settings", "otp_issuer_name").then(data => {
              console.log(data)
          }
+         
+         #获取当前登录的账号
+         var info=frappe.session.user
+            console.log(info)
+            
+            #弹出框
+         frappe.msgprint('{{ _("Both login and password required") }}');
     
     ```
 
@@ -1371,11 +1380,114 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
 
     
 
-12. 
+12. doctype数据验证功能(article.py)
 
-13. 
+    ```perl
+    #1. 在apps/frappe/frappe/utils/_init_.py 加入验证代码
+    IP_ADDRESS_PATTERN = re.compile(r"(\d{1,3}\.){3}\d{1,3}")
+    
+    def validate_code(code_str, throw=False):
+    	code = code_str.strip()
+    	match=IP_ADDRESS_PATTERN.match(code)
+    	if not match and throw:
+    		frappe.throw(frappe._("{0} is not a valid ip address").format(code), frappe.InvalidNameError)
+    
+    	return bool(match)
+    
+    #2. 在apps/library_management/library_management/library_management/doctype/article/article.py 加入验证代码
+    class Article(Document):
+    	def before_save(self):
+    		print(self)
+    		from frappe.utils import validate_email_address
+    
+    		# validate_email_address(self.article_name.strip(), True)
+    		from frappe.utils import validate_code
+    		validate_code(self.article_name,True)
+    
+    		
+    
+    
+    ```
 
-14. 
+    
+
+13. 前端验证功能(article.js)
+
+    ```perl
+    frappe.ui.form.on('Article',  {
+    
+        
+        article_name:function(frm) {
+            //取出填入的值
+            console.log(frm.doc.article_name)
+            var emailRegExp=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            //填入的值做正则匹配
+            var ok=emailRegExp.test(frm.doc.article_name);//验证是否符合要求
+    
+             //根据匹配结果查找相应的input输入框,将input输入框的boder设置为红色
+            if (!ok) {
+                 var elements = document.querySelector(
+                'div.frappe-control[data-fieldname="article_name"]'
+                 );
+    
+                 var item=elements.querySelector(".control-input-wrapper .control-input")
+                 item.style.border = '1px solid red';
+            }else{
+                var elements = document.querySelector(
+                'div.frappe-control[data-fieldname="article_name"]'
+                 );
+    
+                 var item=elements.querySelector(".control-input-wrapper .control-input")
+                 item.style.border = '0px solid red';
+    
+            }
+    
+        },
+        refresh: function(frm) {
+    
+            console.log("refresh");
+    
+        }
+    });
+    ```
+
+    
+
+14. article.js 调用article.py的方法
+
+    ```perl
+    #article.py 中定义方法
+    
+    class Article(Document):
+    	@frappe.whitelist()
+    	def test1(self):
+    		bb = frappe.qb.from_("Article").select("*").run()
+    		frappe.response['message'] = bb
+    		
+    #article.js 调用
+    
+    frappe.ui.form.on('Article',  {
+    
+        setup: function (frm) {
+            frm.call("test1")
+    			.then((items) => {
+    				console.log(items.message)
+    				//frappe.msgprint('{{ _("Both login and password required") }}');
+    			});
+    
+    	}
+    	}
+    ```
+
+    
+
+15. 
+
+16. 
+
+17. 
+
+18. 
 
     
 
