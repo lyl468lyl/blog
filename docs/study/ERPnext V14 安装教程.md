@@ -1257,11 +1257,14 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
 	);
 	
 	#找到html元素,并添加事件
+	
 		page.main.find(".btn1").click(function(){
 			console.log("click")
 		})
-	```
-
+	
+   	
+   ```
+   
 8. frappe doctype文档操作 
 
    ```perl
@@ -1481,9 +1484,130 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
 
     
 
-15. 
+15. data hub 的page加载html
 
-16. 
+    ```perl
+    # gantt.js
+    frappe.pages['gantt'].on_page_load = function(wrapper) {
+    	var page = frappe.ui.make_app_page({
+    		parent: wrapper,
+    		title: 'mypage',
+    		single_column: true
+    	});
+    
+        $("<div class='flex' style='min-height: 200px; padding: 15px;background-color: red'></div>").appendTo(
+    	page.main);
+    
+         const container=$("<div class='flex' style='width: 200px; alignment: left; background-color: blue'>sss</div>").appendTo(
+    	page.main.find(".flex"));
+    	
+    	#在创建的div上添加控件
+    		frappe.ui.form.make_control({
+        parent: container,
+        df: {
+         label: 'New Password',
+        fieldname: 'password',
+        fieldtype: 'Password'
+    },
+        render_input: true
+    })
+    
+    	frappe.ui.form.make_control({
+        parent: wrapper,
+        df: {
+       label: 'Description',
+        fieldname: 'description',
+        fieldtype: 'Text Editor'
+    },
+        render_input: true
+    })
+    ```
+
+    
+
+16. page js刷新html功能
+
+    ```perl
+    #gantt.js
+    var infoPage;
+    frappe.pages['gantt'].on_page_load = function(wrapper) {
+    	var page = frappe.ui.make_app_page({
+    		parent: wrapper,
+    		title: 'mypage',
+    		single_column: true
+    	});
+    	infoPage =page
+    
+    
+    
+        $("<div class='flex' style='min-height: 200px; padding: 15px;background-color: red'></div>").appendTo(
+    	page.main);
+    
+         const container=$("<div class='flex' style='width: 200px; alignment: left; background-color: blue'></div>").appendTo(
+    	page.main.find(".flex"));
+    	 const data=[{"name":"liyulong","age":"12"},{"name":"gerui","age":"20"}]
+         $(frappe.render_template("gantt",{data:data})).appendTo(container.addClass("dataItem"));
+    
+    	 page.add_inner_button('sendmessage', () => sendMessage())
+    
+    }
+    
+    function sendMessage() {
+        console.log("send message")
+    
+    
+    	var element=infoPage.main.find(".dataItem");
+    	console.log(element)
+    	// element.empty()
+    	// element.append('<div>aaa</div>');
+    	// element.on('click',function() {
+    	//     console.log("click")
+    	// })
+    	//element.html("bbb")
+    	// element.css("border","6px solid yellow")
+    
+    
+    
+    	const data=[{"name":"wangwu111","age":"12"},{"name":"maliu","age":"20"}]
+    
+    		aa=$(frappe.render_template("gantt",{data:data}))
+    	element.empty()
+    	element.append(aa)
+    
+    
+    }
+    
+    
+    #gantt.html
+    <!--{% set max_width = '600' %}-->
+    
+    
+    <div>
+    
+        {% if data[0].name %}
+        <h2 class="section-title">{{ data[0].name }}</h2>
+        {% endif %}
+    
+       {% for (var key in data) { %}
+    
+    
+    
+        <tr>
+            <td><code>{{ key }}</code></td>
+            <td>{{ data[key].name }}</td>
+            <td>{{ data[key].age }}</td>
+        </tr>
+        {% } %}
+    
+    </div>
+    
+    
+    
+    
+    
+    ```
+
+    
 
 17. 
 
