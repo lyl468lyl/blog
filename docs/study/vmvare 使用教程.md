@@ -107,7 +107,15 @@ tag:
    
 
    ```perl
-   vmrun start  "/home/sj/vmware/Ubuntu/Ubuntu.vmx" nogui
+   vmrun start  "/home/sj/vmware/Ubuntu/Ubuntu.vmx" nogui #启动虚拟机
+   
+   vmrun stop "/home/sj/vmware/Ubuntu/Ubuntu.vmx" soft|hard  #关闭虚拟机
+   
+   #如果 执行 vmrun stop 后执行vmrun start 报错: the file is using,说明文件被锁了,删除.lck文件
+   
+   打开transmit 软件,找到路径/home/data/liyuong
+   
+   删除文件夹: "Ubuntu 64-1-000002.vmdk.lck"
    ```
 
    
