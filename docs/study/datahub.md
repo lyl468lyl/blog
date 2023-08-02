@@ -230,7 +230,7 @@ if __name__ == '__main__':
 
    http://192.168.50.23/api/method/frappe.www.login.set_username_password?name=xiaoli&password=aaa
 
-   login.py
+    apps/frappe/frappe/www/login.py
 
    ```perl
    
@@ -259,7 +259,7 @@ if __name__ == '__main__':
 
    由于框架使用frappe,使用jinja模版.将账号传入html端
 
-   login.html
+   apps/frappe/frappe/www/login.html
 
    ```perl
    <div style="display: none" class="user">{{userName}}</div>
@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
    
 
-   login.js
+   apps/frappe/frappe/templates/includes/login/login.js
 
    js端获取账号
 
@@ -276,31 +276,139 @@ if __name__ == '__main__':
    $(window).on("hashchange", function () {
    
    		var userInfo=$(".user").text();
-		var passwd=$(".password").text();
+			var passwd=$(".password").text();
    		console.log(userInfo)
-		console.log(passwd)
-   		login.route();
-   	});
-   ```
+			console.log(passwd)
    
-   调用账号体系,验证密码
+   		//用传过来的userInfo passwd进行登录
    
-   ```perl
-   	$(".form-login").on("submit", function (event) {
-   		event.preventDefault();
    		var args = {};
    		args.cmd = "login";
-   		args.usr = frappe.utils.xss_sanitise(($("#login_email").val() || "").trim());
-   		args.pwd = $("#login_password").val();
+   		args.usr = userInfo
+   		args.pwd = passwd;
    		args.device = "desktop";
    		if (!args.usr || !args.pwd) {
    			frappe.msgprint('{{ _("Both login and password required") }}');
-			return false;
+   			return false;
    		}
-		login.call(args);
+   		login.call(args);
+   
    		return false;
-   	});
+   
+	
+   		login.route();
+		});
    ```
+   
+   
+   
+   
+   
+   
+   
+   apps/frappe/frappe/www/message.html
+   
+   ```perl
+   <div style="display: none"><a id="loginitem" href='{{ primary_action or "/" }}' class='btn btn-primary btn-sm'>
+   			确定</a></div>
+   ```
+   
+   
+   
+   ```perl
+   
+   <script>
+   	frappe.ready(function() {
+   
+   		if (window.location.hash || window.location.href.includes('/app')) {
+   			localStorage.setItem('session_last_route', window.location.pathname + window.location.hash + window.location.search);
+   		}
+   
+   		$('.btn-primary').focus();
+   		var link = document.getElementById('loginitem');
+   		console.log(link)
+   		link.click()
+   	});
+   </script>
+   {% endblock %}
+   ```
+   
+   apps/frappe/frappe/handler.py
+   
+   ```perl
+   
+   @frappe.whitelist(allow_guest=True)
+   def web_logout():
+   	frappe.local.login_manager.logout()
+   	frappe.db.commit()
+   
+   	frappe.respond_as_web_page(
+   		"用户切换", _("用户切换中...."), indicator_color="green"
+   	)
+   ```
+   
+   
+   
+   
+   
+   
+   
+   客户端请求
+   
+   ```perl
+   #调用接口的客户端(aps端)
+   
+     $.ajax({
+            // url:"http://192.168.50.23/api/method/frappe.www.login.set_username_password?name=duchengkun@shangjian.com&password=zxc%3C%3E?123",
+           url: "http://192.168.50.23/api/method/frappe.www.login.set_username_password?name=Administrator&password=123",
+   
+           type: "GET",
+          success: function(response) {
+               console.log(response)
+               var newWindow = window.open('_blank')
+               newWindow.location='http://192.168.50.23/?cmd=web_logout'
+   
+     },
+     error: function(xhr, status, error) {
+       // 处理错误
+     }
+   });
+   ```
+   
+   
+   
+   备注 
+   
+   在html中如何使用js代码,使用{% block script %}和{% endblock %},如下代码
+   
+   apps/frappe/frappe/www/error.html
+   
+   ```perl
+   {% block script %}
+   <script>
+   	let toggle_button = $(".view-error");
+   	let error_log = $(".error-content");
+   
+   	toggle_button.on('click', () => {
+   		if (error_log.hasClass("hidden")) {
+   			toggle_button.html(`{{ _("Hide Traceback") }}`);
+   			error_log.removeClass("hidden");
+   		} else {
+   			toggle_button.html(`{{ _("Show Traceback") }}`);
+   			error_log.addClass("hidden");
+   		}
+   	})
+   </script>
+   {% endblock %}
+   ```
+   
+   
+   
+   
+   
+   
+   
+   
    
    
    

@@ -1609,8 +1609,36 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
 
     
 
-17. 
+    
 
+18. 修改doctype 页,添加单选按钮,实现单选按钮的级联
+
+    ```perl
+    frappe.ui.form.on("Supplier", {
+    
+    
+    	geo:function (frm){
+    
+    		if(frm.doc.geo=="北京")
+    		{
+    
+    			frm.set_value('zone','昌平')
+    		    frm.set_df_property('zone', 'options', ["昌平","顺义","平谷"]);
+    		}if (frm.doc.geo=="上海")
+    		{
+    			frm.set_value('zone','苹果')
+    		    frm.set_df_property('zone', 'options', ["苹果","香蕉","橘子"]);
+    
+    		}
+    
+    
+    
+    	},
+    	}
+    ```
+    
+    
+    
 18. 
 
     
