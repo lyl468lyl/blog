@@ -1613,6 +1613,8 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
 
 18. 修改doctype 页,添加单选按钮,实现单选按钮的级联
 
+    supper.js
+    
     ```perl
     frappe.ui.form.on("Supplier", {
     
@@ -1639,7 +1641,64 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
     
     
     
-18. 
+18. erpnext sass操作
+
+    ```perl
+    #备份demo 站点数据
+     bench --site demo backup
+     Config  : ./demo/private/backups/20230817_163310-demo-site_config_backup.json 225.0B
+    Database: ./demo/private/backups/20230817_163310-demo-database.sql.gz         152.5MiB
+    
+    #恢复数据到datahub 站点中123
+    
+    bench --site datahub --force restore /opt/module/frappe-bench/sites/demo/private/backups/20230817_163310-demo-database.sql.gz
+    
+    #更新站点配置
+    #在目标站点的工作目录中，编辑 sites/datahub/site_config.json 文件，确保数据库连接等配置是正确的
+    {
+     "db_name": "_9eff1d3a996284a5",
+     "db_password": "uAaUGsuhwHhPGRTM",
+     "db_type": "mariadb",
+     "user_type_doctype_limit": {
+      "employee_self_service": 20
+     }
+    }
+    
+    #执行迁移命令,
+    #在目标站点的工作目录中，运行以下命令以确保数据库结构与代码一致：
+    bench --site datahub migrate
+    
+    bench --site datahub clear-cache
+    
+    #验证访问
+    http://192.168.50.194/app/selling
+    
+    #删除站点操作
+     bench drop-site test1
+     
+    bench new-site test1 --admin-password 123 --db-root-password 123 --install-app payments --install-app erpnext
+    
+    bench --site test1 --force restore /opt/module/frappe-bench/sites/demo/private/backups/20230817_163310-demo-database.sql.gz --db-name test --db-root-password 123
+    
+    #重启服务
+    sudo bench setup production frappe 
+       
+    
+    ```
+    
+    
+    
+19. 
+
+20. 
+
+21. 
+
+22. 
+
+23. 
+
+    
 
     
 
