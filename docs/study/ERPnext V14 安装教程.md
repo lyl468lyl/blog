@@ -1639,6 +1639,30 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
     	}
     ```
     
+    修改apps/erpnext/erpnext/controll/buying_controller.py
+    
+    ```perl
+    # liyulong by 2023.8.18
+    	def set_total_in_words(self):
+    		from frappe.utils import money_in_words
+    
+    		if self.meta.get_field("base_in_words"):
+    			if self.meta.get_field("base_rounded_total") and not self.is_rounded_total_disabled():
+    				amount = abs(float(self.base_rounded_total))
+    			else:
+    				grand_total=float(self.base_grand_total)
+    				amount = abs(grand_total)
+    			self.base_in_words = money_in_words(amount, self.company_currency)
+    
+    		if self.meta.get_field("in_words"):
+    			if self.meta.get_field("rounded_total") and not self.is_rounded_total_disabled():
+    				amount = abs(float(self.rounded_total))
+    			else:
+    				amount = abs(float(self.grand_total))
+    
+    			self.in_words = money_in_words(amount, self.currency)
+    ```
+    
     
     
 18. erpnext sass操作
@@ -1674,15 +1698,37 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
     http://192.168.50.194/app/selling
     
     #删除站点操作
-     bench drop-site test1
+    bench drop-site test1
      
-    bench new-site test1 --admin-password 123 --db-root-password 123 --install-app payments --install-app erpnext
+    bench new-site demo2 --admin-password 123 --db-root-password 123 --db-name demo2  --install-app payments --install-app erpnext
     
-    bench --site test1 --force restore /opt/module/frappe-bench/sites/demo/private/backups/20230817_163310-demo-database.sql.gz --db-name test --db-root-password 123
+    #注意/opt/module/frappe-bench/sites/demo/private/backups/20230818_181903-demo-database.sql.gz是否存在
+    bench --site demo2 --force restore /opt/module/frappe-bench/sites/demo/private/backups/20230825_104327-demo-database.sql.gz --db-root-password 123
+    
     
     #重启服务
     sudo bench setup production frappe 
+    
+    #查询站点的应用
+    bench --site test1 list-apps --format json
        
+       
+    #nginx 配置的路径
+    /etc/nginx/conf.d/frappe-bench.conf
+    
+    
+    #sudo bench setup production frappe 自动启动命令脚本
+    #test.sh脚本内容如下:
+    
+    #!/bin/bash
+    
+    # 文件名用于保存输出内容
+    output_file="output.log"
+    
+    # 执行 bench setup production frappe 命令，并自动交互输入，同时将输出信息重定向到文件
+    echo -e "123\ny\ny\ny" | sudo -S bench setup production frappe 2>&1 | tee -a "$output_file"
+    
+    
     
     ```
     

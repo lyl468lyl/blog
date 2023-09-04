@@ -77,6 +77,35 @@ FLUSH   PRIVILEGES;
 
 
 
+
+#拉取 nginx 最新版镜像，然后简单启动一个 nginx 容器
+docker pull nginx:latest
+docker run --name nginx01 -d -p 80:80 nginx
+
+#下载nginx.conf
+sudo mkdir -p /home/docker/nginx/{log,ssl,html,conf/conf.d}
+sudo chmod -R 755 /home/docker/nginx/html
+
+docker cp nginx01:/etc/nginx/nginx.conf /home/docker/nginx/conf/nginx.conf
+docker cp nginx01:/etc/nginx/conf.d/default.conf /home/docker/nginx/conf/conf.d/default.conf
+
+#删除容器和镜像
+docker stop nginx01
+docker rm nginx01
+
+
+#重新配置nginx
+
+docker run \
+-p 90:80 \
+--name nginx-flask \
+--restart=always \
+--privileged=true \
+-v /home/data/sass_aps/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+-v /home/data/sass_aps/nginx/conf/conf.d:/etc/nginx/conf.d \
+-v /home/data/sass_aps/nginx/log:/var/log/nginx \
+-d nginx:latest
+
 #doker 运行nginx
 
 docker run \
