@@ -1,3 +1,15 @@
+---
+
+date: 2013-9-08
+
+category: 及时通信
+
+tag:
+
+  - flask
+
+---
+
 # python flask 推送功能
 
 python代码

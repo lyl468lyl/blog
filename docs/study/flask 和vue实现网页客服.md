@@ -1,3 +1,15 @@
+---
+
+date: 2013-9-13
+
+category: 及时通信
+
+tag:
+
+  - flask-vue
+
+---
+
 # flask 和vue实现网页客服
 
 1. 服务端安装(flask 组件安装)

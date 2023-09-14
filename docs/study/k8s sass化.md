@@ -1,13 +1,16 @@
+---
 
-date: 2013-7-19
+date: 2013-9-11
 
-category: sass
+category: k8s
 
 tag:
 
-  - sass
+  - k8s
 
-# sass(aps)开发文档
+---
+
+# k8s(aps)开发文档
 
 #### 前提准备
 
