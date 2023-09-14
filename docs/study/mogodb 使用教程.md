@@ -61,14 +61,35 @@ tag:
 6. 配置:要想让别的主机连接安装好的mongodb需要修改配置文件，配置文件位于/etc目录下
 
    ```perl'
-   /etc/mongodb.conf
+    vi /etc/mongod.conf
    
    将bind_ip = 127.0.0.1 修改为0.0.0.0
    ```
 
    
 
-7. java 开发相关依赖
+7. mongo日志的查看
+
+   ```perl
+    #vi /etc/mongod.conf
+    查看配置:
+   logAppend: true
+   path: /var/log/mongodb/mongod.log
+   
+   日志在/var/log/mongodb/mongod.log路径下
+   创建日志文件夹
+   mkdir /var/log/mongodb
+   chmod -R 777 /var/log/mongodb
+   启动
+   service mongod start
+   查看端口占用
+   netstat -lntup|grep 27017
+   
+   ```
+
+   
+
+8. java 开发相关依赖
 
    ```perl
    <dependency>
@@ -82,7 +103,7 @@ tag:
 
    
 
-8. spring 链接方式
+9. spring 链接方式
 
    ```perl
    spring:
@@ -96,7 +117,7 @@ tag:
 
    
 
-9. 图形界面工具
+10. 图形界面工具
 
    ```pel
    https://www.mongodb.com/try/download/community
@@ -104,7 +125,7 @@ tag:
 
    
 
-10. 基本操作
+11. 基本操作
 
     ```perl
     1.mongoTemplate.findAll(Student.class): 查询Student文档的全部数据

@@ -1732,9 +1732,46 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
     
     ```
     
+19. 修改库存--物料中采购中的采购配比 相加必须等于100%
+
+    /Users/li/Desktop/frappe35/sites/assets/frappe/js/frappe/form/save.js
+
+    ```perl
+    var check_mandatory = function () {
+    
+    		var has_errors = false;
+    		frm.scroll_set = false;
+    
+    		//liyulong modify by 2023.9.12
+    		//修改库存--物料中采购中的采购配比 相加必须等于100%
+    		var isSupplierItem=frm.doc.hasOwnProperty("supplier_items")
+    		if(isSupplierItem){
+    
+    			var suppliers=frm.doc.supplier_items
+    			var sum_rate=0
+    
+    				suppliers.forEach(function (item) {
+    				console.log(item.purchase_ratio)
+    				sum_rate += item.purchase_ratio
+    			})
+    			if (sum_rate != 100) {
+    
+    				frappe.msgprint({
+    					message: "采购配比和不是100%",
+    					indicator: "red",
+    					title: "输入参数值错误",
+    				});
+    
+    				return false
+    			}
+    
+    		}
     
     
-19. 
+    }
+    ```
+
+    
 
 20. 
 
@@ -1743,6 +1780,8 @@ $("<div class='perm-engine' style='min-height: 200px; padding: 15px;'>sss</div>"
 22. 
 
 23. 
+
+24. 
 
     
 
