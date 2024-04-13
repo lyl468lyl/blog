@@ -1,5 +1,6 @@
 echo "Start submitting code to the local repository"
 
+cd /Users/li/Desktop/blog;
 git add *
 echo;
 

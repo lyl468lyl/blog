@@ -1,5 +1,7 @@
 
 
+
+
 # 
 
 qt下载
@@ -9,6 +11,8 @@ https://www.qt.io/offline-installers
 ```
 
 qt代码
+
+1) 快捷键的使用
 
 ```perl
  Q_OBJECT  宏,允许类中使用信号和槽的机制
@@ -27,30 +31,40 @@ qt代码
 ctrl+i
 同名之间.h和.app切换
 1)fn+f4
+```
 
-button 按钮
+2) button 按钮
 
+```perl
 QPushButton *btn=new QPushButton("按钮",this);
 btn->setParent(this);
 
 btn->move(100,100);
 setFixedSize(600,400);
-btn->show();
-setWindowTitle("first");
 
-对象树
+setWindowTitle("first");
+```
+
+3) 对象树
+
+```perl'
 当创建的对象在堆中时,如果指定的父亲是Qobject或者Qobject
 子类,就可以不用管理释放操作,这时会将对象放到对象树中,当关闭
 窗口时自动释放对象.
+```
 
-信号和槽
+4)信号和槽
 
+```perl
 connect(btn,&QPushButton::clicked,this,&QWidget::close);
 
 自定义信号
  老师  发送饿了信号  学生接收信号   学生请客吃饭(槽)
 
 信号 :没有返回值, 需要声明,不需要实现
+定义信号: 
+signals:
+void hugrray();
 槽  :没有返回值,需要声明,需要实现
  connect 做连接
  信号触发:emit
@@ -64,13 +78,18 @@ void MainWindow::sendMessge(){
     emit te->huggry();
 
 }
+```
 
-qdebug使用
+5)Qdebug使用
 
+```perl
 #include <QDebug>
 qDebug()<<""
+```
 
+6)自定义信号和槽重载
 
+```perl
 当自定义信号和槽实现重载
 需要利用函数指针明确指向的地址
 void (Teacher::*tsignal)(Qstring)=&Teacher::hungry
@@ -92,10 +111,20 @@ st=new Student(this);
     connect(st,stSiganl,te,teSlot);
 
     emit st->huggry("apple");
+```
 
+7)无参的信号和槽
 
+```perl
+触发无参的槽函数
+    void (Student:: * stSiganl1)(void)=&Student::huggry;
+    void (Teacher:: * teSlot1 )(void)=&Teacher::treat;
+    connect(st,stSiganl1,te,teSlot1);
+```
 
+8)按钮触发信号
 
+```perl
 
 QPushButton *btn=new QPushButton("btn",this);
 resize(600,400);
@@ -105,7 +134,7 @@ btn->move(10,10);
 触发无参的槽函数
     void (Student:: * stSiganl1)(void)=&Student::huggry;
     void (Teacher:: * teSlot1 )(void)=&Teacher::treat;
-    connect(st,stSiganl1,te,teSlot1);
+ 
 
 信号和槽关闭端口
     connect(btn,&QPushButton::clicked,te,teSlot1);
@@ -125,14 +154,17 @@ connect(btn,&QPushButton::clicked,st,stSiganl1);//相当有emit->st->huggry()
 信号和槽的参数,必须类型一一对应
 信号和槽的参数个数,是不是要一致 信号的参数个数 可以
 多余槽函数的参数个数.
+```
 
+9)lamda表达式
 
+```perl
 lamda表达式
-[] 是标识符 匿名函数
-[]()mutable{}
-中括号中 = 表示值传递  & 引用传递
-关键字mutable 表示可以修改值传递的值,没有mutable,修改不了值传递的值.
-lambda 表达式
+1) [] 是标识符 匿名函数
+2) []()mutable{}
+3) 中括号中 = 表示值传递  & 引用传递
+4) 关键字mutable 表示可以修改值传递的值,没有mutable,修改不了值传递的值.
+
 
 QPushButton *b1=new QPushButton("b1",this);
 QPushButton *b2=new QPushButton("b2",this);
@@ -147,18 +179,24 @@ connect(b1,&QPushButton::clicked,this,[=]()mutable{
     qDebug()<<m;
 });
 
-qDebug()<<m;
 
-lambda表达式 返回值
+
+```
+
+10)lamda 返回值
+
+```perl
 int ret=[]()->int{}
 
 int ret=[]()->int{
     return 100;
 }();
 qDebug()<<ret;
+```
 
+11)创建菜单和工具栏
 
-创建菜单和工具栏
+```perl
 添加菜单栏
 QMenu *menu=new QMenu("file");
 QAction *openAction= menu->addAction("open");
@@ -201,8 +239,11 @@ dock->setAllowedAreas(Qt::LeftDockWidgetArea);
 //添加中心部件
 QTextEdit *edit=new QTextEdit();
 this->setCentralWidget(edit);
+```
 
-qt 资源文件的添加
+12) 导入资源文件
+
+```perl
 1) 将图片文件夹拷贝到项目的文件下
 2) 在项目名中右键-->add new-->qt-->qt resource-->完成
 3) 会出现Resource-->res.qrc 右键选择open in editor
@@ -211,8 +252,11 @@ qt 资源文件的添加
 6)引用资源文件:
 格式 ":+前缀+文件路径"
 ui->actionnew_2->setIcon(QIcon(":/image/home.png"));
+```
 
-对话框
+12)对话框
+
+```c++
 点击菜单了弹出模态对话框
 对话框分为: 1)模态对话框(阻塞式,对话框下面不可操作) 2)非模态对话框(异步式,对话框下面可操作)
 
@@ -279,8 +323,11 @@ QMessageBox::information(this,"xinxi","xinxn");
  8) 修改wiget中垂直高度:选择wiget,在属性sizepoliy:垂直高度:fixed
  9) 修改wiget中maign:在属性:layout中 layoutleftmaign:0 layoutrightmaign:0 ......
  10)设置窗口不能调整大小: 选择mainwidow,将属性 maximumsize: 宽度和高度设置 420,303,minimumsize:420,303
+```
 
+13)基本控件
 
+```c++
 控件操作
 1) toolbutton:用于显示图片的按钮
 属性: toolbuttonStype:toolbuttonTextbeside,autorise:勾选
@@ -381,7 +428,11 @@ ui->label->setMovie(move);
 move->start();
 
 
-自定义控件
+```
+
+14)自定义控件
+
+```c++
 自定义控件
 1) 在已经存在的项目中,在项目名右键-->addnew-->qt-->qt设计师界面类--输入类名(Shap)
 2)会产生三个文件(shap.h,shap.cpp,shap.ui)
@@ -428,8 +479,12 @@ connect(ui->set,&QPushButton::clicked,[=](){
 });
 
 
-qt 中的事件
 
+```
+
+15)qt的事件
+
+```c++
 1) 在项目名右键,add new ...
 2) 选择c++ c++ class类
 3)创建Mylabel 类(Mylable.h Mylabel.cpp)
@@ -469,7 +524,7 @@ void Mylabel::mousePressEvent(QMouseEvent *event){
     {
         qDebug()<<"鼠标按下事件";
 
-        QString str=QString("x:%,y:%y").arg(event->x(),event->y());
+        QString str=QString("x:%1,y:%2").arg(event->x(),event->y());
         qDebug()<<str;
     }
 
@@ -490,9 +545,11 @@ void Mylabel::mouseReleaseEvent(QMouseEvent *event){
 }
 
 5) 在mainwindow.ui中拖拽一个label,控件,选择该控件,右键,选择提升为,填入创建的"Mylabel"类名.
+```
 
+16)定时器
 
-qt 定时器
+```c++
 第一种做法:复写QObecect中的void timerEvent(QTimerEvent *event)方法.
 
 1) 在mainwidow的构造函数中启动定时器
@@ -539,26 +596,12 @@ connect(timer,&QTimer::timeout,[=](){
 });
 
 
-事件分发器
-bool event(QEvent *ev)
-返回类型是bool,如果返回是true,代表用户要处理事件,不向下分发事件.
 
-实现,在Mylabel.cpp中
-bool  Mylabel::event(QEvent *ev){
+```
 
-    if(ev->type()==QEvent::Enter){
+17)事件过滤器
 
-        qDebug()<<"阻断了鼠标的点击事件";
-        //代表用户自己处理事件
-        return true;
-    }
-
-    //其他事件交个父类处理,默认处理
-    return QLabel::event(ev);
-
-
-}
-
+```c++
 事件过滤器
 通过事件过滤器,可以在程序分发到event事件之前,在做一层
 高级拦截
@@ -588,8 +631,12 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *ev){
 
 }
 
-Qpainer
 
+```
+
+18)画图
+
+```c++
 1) 在mainwindow复写 void painterEvent()方法
 实现
 void MainWindow::paintEvent(QPaintEvent *event){
@@ -625,11 +672,11 @@ void MainWindow::paintEvent(QPaintEvent *event){
 }
 
 
-painter 高级设置
-实现
+```
 
-高级设置
+19)画图的高级设置
 
+```c++
     painer.drawEllipse(QPoint(100,100),50,50);
 
     //设置抗锯齿能力
@@ -668,10 +715,11 @@ connect(ui->move,&QPushButton::clicked,[=](){
 
     update();
 });
+```
 
+20)画图设备
 
-绘图设备
-
+```c++
 绘图设备有 QPixmap ,QImage QPicture
 
 代码实现:
@@ -716,10 +764,11 @@ QPainter painter3(this);
 QPicture pic;
 pic.load("/Users/li/demo3.li");
 painter3.drawPicture(0,0,pic);
+```
 
-QFile 对文件读写
+21)文件读写
 
-
+```c++
 QFile 读取指定的文件
 
 QFile file("/Users/li/message.txt");
@@ -760,7 +809,241 @@ file.close();
 获取创建时间和修改时间
 QDateTime lastDate= fileinfo.lastModified();
 qDebug()<<lastDate.toString("yyyy/MM/dd hh:mm:ss");
+```
 
 
+
+
+
+项目
+
+pushbutton 设置背景按钮
+
+```perl
+# pushbutton 设置背景按钮
+MyPushButton::MyPushButton(QString normalPath,QString pushPath){
+
+    QPixmap pix;
+    bool ret=pix.load(normalPath);
+    //设置按钮额大小
+    this->setFixedSize(pix.width(),pix.height());
+    if(!ret){
+
+        qDebug()<<"加载资源失败";
+
+    }
+
+
+    this->setStyleSheet("QPushButton{border:0px}");
+    //按钮设置图片
+    this->setIcon(pix);
+    this->setIconSize(QSize(pix.width(),pix.height()));
+
+}
+```
+
+
+
+使用自定义的pushbutton
+
+```perl
+ //创建自定义的pushbutton
+    MyPushButton *mybtn=new MyPushButton(":/res/MenuSceneStartButton.png");
+    mybtn->setParent(this);
+    mybtn->move(this->width()*0.5-mybtn->width()*0.5,this->height()*0.7);
+```
+
+
+
+按钮实现动画效果
+
+```perl
+void MyPushButton::zoomUp(){
+
+    //创建动画对象
+    //this,给谁做动画(target)
+    QPropertyAnimation *animation=new QPropertyAnimation(this,"geometry");
+    animation->setDuration(200);
+    animation->setStartValue(QRect(this->x(),this->y(),this->width(),this->height()));
+    animation->setEndValue(QRect(this->x(),this->y()-10,this->width(),this->height()));
+   //设置缓和曲线, QEasingCurve::OutBounce为弹跳效果
+    animation->setEasingCurve(QEasingCurve::OutBounce);
+    animation->start();
+
+}
+
+void MyPushButton::zoomDown(){
+
+    //创建动画对象
+    QPropertyAnimation *animation=new QPropertyAnimation(this,"geometry");
+    animation->setDuration(200);
+    animation->setStartValue(QRect(this->x(),this->y()-10,this->width(),this->height()));
+    animation->setEndValue(QRect(this->x(),this->y(),this->width(),this->height()));
+    animation->setEasingCurve(QEasingCurve::OutBounce);
+    animation->start();
+
+}
+```
+
+
+
+定时器的使用
+
+```perl
+  QTimer::singleShot(500,this,[=](){
+
+            this->hide();
+            second->show();
+        });
+```
+
+点击按钮,有按下的效果,重新复写void mousePressEvent(QMouseEvent *event)方法
+
+和mouseReleaseEvent(QMouseEvent *event)方法,有两种图片,鼠标按下时,换成(按下的图片),松开鼠标时,换成原来的图片
+
+```perl
+////重写pushbutton事件
+void MyPushButton::mousePressEvent(QMouseEvent *event){
+
+
+
+    if(this->btnPushPath!=NULL){
+        qDebug()<<"push";
+
+        QPixmap pix;
+        pix.load(this->btnPushPath);
+        this->setFixedSize(pix.width(),pix.height());
+        this->setIcon(pix);
+        this->setIconSize(QSize(pix.width(),pix.height()));
+
+    }
+
+
+
+    return QPushButton::mousePressEvent(event);
+
+
+}
+
+void MyPushButton::mouseReleaseEvent(QMouseEvent *event){
+
+    if(this->btnPushPath!=NULL){
+
+        QPixmap pix;
+        bool ret=pix.load(this->btnNormalPath);
+        if(!ret){
+            qDebug()<<"加载资源失败";
+        }
+        this->setFixedSize(pix.width(),pix.height());
+        this->setIcon(pix);
+        this->setIconSize(QSize(pix.width(),pix.height()));
+
+       qDebug()<<"normal btn";
+
+
+    }
+
+    return QPushButton::mouseReleaseEvent(event);
+}
+```
+
+点击back按钮,second页隐藏,main页显示
+
+```perl
+1)在second 中定义信号
+//secondscene.h
+
+signals:
+    void secondBackSignal();
+    
+    
+2)点击back按钮触发信号
+ 
+    connect(back,&QPushButton::clicked,this,[=](){
+
+
+        QTimer::singleShot(500,this,[=](){
+            this->hide();
+            emit this->secondBackSignal();
+
+        });
+    });
+    
+3)在main中监听信息,在构造函数中写如下代码.
+ //监听第二页的是否点击了back按钮
+    connect(second,&SecondScene::secondBackSignal,this,[=](){
+        this->show();
+    });
+    
+```
+
+在second场景中创建20个按钮
+
+```perl
+for(int i=0;i<20;i++){
+
+
+        MyPushButton *btn=new MyPushButton(":/res/LevelIcon.png");
+        btn->setParent(this);
+        btn->move(25+(i%4)*70,130+(i/4)*70);
+
+        //创建label
+
+        QLabel *label=new QLabel(this);
+        label->setFixedSize(btn->width(),btn->height());
+        label->setText(QString::number(i+1));
+        label->move(25+(i%4)*70,130+(i/4)*70);
+        label->setAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        //设置事件穿透属性
+        label->setAttribute(Qt::WA_TransparentForMouseEvents,true);
+
+
+    }
+```
+
+```
+label->setGeometry(0,0,200,50);
+#这个意思让lablel 占用的位置,占用的大小.
+#label 以屏幕左上角的起始位置开始占用,lablel占用大小是宽度200,高度50,如果label的文字多余200,则无法显示.
+#相当于前端的画了以div容器
+
+```
+
+lable 放入图片
+
+```perl
+     for(int i=0;i<4;i++){
+
+        for(int j=0;j<4;j++){
+
+          QLabel *label1=new QLabel();
+          label1->setParent(this);
+          //画一个50*50盒子,把图片放入盒子内
+          label1->setGeometry(0,0,50,50);
+          label1->setPixmap(QPixmap(":/res/BoardNode.png"));
+
+
+           label1->move(57+i*50,200+j*50);
+
+
+
+
+      }
+   }
+```
+
+lable 放入文字
+
+```perl
+QLabel *label=new QLabel(this);
+    label->setText(QString("当前的关卡:%1").arg(index));
+
+    QFont font;
+    font.setBold(true);
+    font.setPointSize(20);
+    font.setFamily("华文新魏");
+    label->setFont(font);
+    label->setGeometry(0,0,200,50);
+    label->move(20,this->height()-70);
 ```
 
